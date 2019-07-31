@@ -1,0 +1,346 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+    /* background: linear-gradient( to bottom right, #e43636, #1e1c1c); */
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+
+    .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+}
+
+.container-fluid {
+    padding: 60px 50px;
+}
+
+.jumbotron { 
+    font-family: Montserrat, sans-serif;
+    background-color: #2e3842;
+    background-image: linear-gradient( to bottom right, #e43636, #1e1c1c);
+    color: #ffffff;
+    padding: 100px 25px;
+}
+
+.bg-grey {
+    background-color: #f6f6f6;
+}
+
+.logo-small {
+    color: #468dd2;
+    font-size: 50px;
+  }
+  
+  .logo {
+    color: #468dd2;
+    font-size: 200px;
+  }
+
+  .thumbnail {
+    padding: 0 0 0 0;
+    border: none;
+    border-radius: 0;
+  }
+  
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+
+  #contacticons {
+    width: 40%;
+    height: 25%;
+    margin-bottom: 10px;
+  }
+
+  #contactlinks {
+    border-color: 1px rgb(120, 16, 16);
+  }
+
+
+
+  /* CAROUSEL */
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #468dd2;
+  }
+  
+  .carousel-indicators li {
+    border-color: #468dd2;
+  }
+  
+  .carousel-indicators li.active {
+    background-color: #468dd2;
+  }
+  
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  
+  .item span {
+    font-style: normal;
+  }
+
+  /* PRICING CONTAINER */
+
+  .panel {
+    border: 1px solid #a71e1e; 
+    border-radius: 5px;
+    transition: box-shadow 0.5s;
+  }
+  
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  
+  .panel-footer .btn {
+    transition: border 0.5s;
+  }
+  .panel-footer .btn:hover {
+    border: 1px outset #f6f6f6;
+    /* box-shadow: 5px 0px 40px rgba(0,0,0, .2); */
+    background-color: #fff !important;
+    color: rgb(164, 21, 21);
+    
+  }
+  
+  .panel-heading {
+    color: #fff !important;
+    background-color: #3e3a3a !important;
+    padding: 10px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  
+  .panel-footer {
+    background-color: #fff !important;
+    padding: 5px 10px;
+  }
+
+  .btn-link {
+    padding: 0px
+  }
+  
+  .panel-footer h3 {
+    font-size: 24px;
+    margin: 3px 0;
+  }
+  
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  
+  .panel-footer .btn {
+    margin: 0px 0;
+    background-color: #ffffff;
+    color: #fff;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.95;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+  }
+  
+  .navbar li a, .navbar .navbar-brand {
+    color: rgb(164, 21, 21) !important;
+  }
+  
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #468dd2 !important;
+    background-color: #fff !important;
+  }
+  
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+
+  #soundclick {
+      height: 50px;
+      padding: 5px;
+  }
+
+  #welcome {
+    animation-name: welcome;
+    animation-duration: 2s;
+  }
+  @keyframes welcome {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  #aboutme {
+    animation: aboutme;
+    animation-duration: 4s;
+  }
+  @keyframes aboutme {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  #a {
+    animation-name: a;
+    animation-duration: 1.4s;
+  }
+  @keyframes a {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  #b {
+    animation-name: b;
+    animation-duration: 1.8s;
+  }
+  @keyframes b {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  #c {
+    animation-name: c;
+    animation-duration: 2.2s;
+  }
+  @keyframes c {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  #d {
+    animation-name: d;
+    animation-duration: 2.6s;
+  }
+  @keyframes d {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  #e {
+    animation-name: e;
+    animation-duration: 3s;
+  }
+  @keyframes e {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+  /* FOOTER */
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #2702f7;
+  }
+
+  #icon {
+		width: 60px;
+		padding: 10px;
+		margin-left: 1px;
+	}
+
+
+
+  .slideanim {visibility:hidden;}
+  .slide {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+    /* The duration of the animation */
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible; 
+  }
+
+  
+  
+  /* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    } 
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
