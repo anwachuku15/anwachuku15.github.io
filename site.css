@@ -10,10 +10,7 @@ body {
     /* background: linear-gradient( to bottom right, #e43636, #1e1c1c); */
 }
 
-@viewport {
-  width: device-width ;
-  zoom: 1.0 ;
-}
+
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
