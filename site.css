@@ -126,7 +126,13 @@ body {
     font-style: normal;
   }
 
-  /* PRICING CONTAINER */
+  /* PORTFOLIO CONTAINER */
+  #portfolio {
+    background-image: url('img/laptop.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
 
   .panel {
     border: 1px solid #a71e1e; 
