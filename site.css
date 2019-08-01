@@ -50,7 +50,7 @@ body {
     padding: 60px 50px;
 }
 
-@media screen and (max-width: 479px) {
+@media only screen and (max-width: 479px) {
   .jumbotron { 
     font-family: Montserrat, sans-serif;
     background-color: #2e3842;
@@ -161,7 +161,7 @@ body {
   }
 
   /* PORTFOLIO CONTAINER */
-@media screen and (max-width: 479px) {
+@media only screen and (max-width: 479px) {
   #portfolio { 
     font-family: Montserrat, sans-serif;
     background-color: #2e3842;
