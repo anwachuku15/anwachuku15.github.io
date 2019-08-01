@@ -169,32 +169,36 @@ body {
   }
 
   /* PORTFOLIO CONTAINER */
-@media only screen and (max-device-width: 479px) {
-  #portfolio { 
-    font-family: Montserrat, sans-serif;
-    background-color: #2e3842;
-    background-image: url('img/laptopsmall.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover; 
-    background-size: cover; 
-    color: #ffffff;
-    padding: 100px 25px;
-  }
+#portfolio { 
+  font-family: Montserrat, sans-serif;
+  background-color: #2e3842;
+  background-image: url('img/laptopsmall.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+/*   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;  */
+  background-size: cover; 
+  color: #ffffff;
+  padding: 100px 25px;
 }
 
-  #portfolio {
-    background-image: url('img/laptop.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover; 
-    background-size: cover; 
+@media only screen and (min-device-width: 500px) {
+    #portfolio { 
+      font-family: Montserrat, sans-serif;
+      background-color: #2e3842;
+      background-image: url('img/laptop.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+/*       -webkit-background-size: 50%;
+      -moz-background-size: 50%;
+      -o-background-size: 50%;  */
+      background-size: cover; 
+      color: #ffffff;
+      padding: 100px 25px;
+    }
   }
 
 
