@@ -95,9 +95,9 @@ body {
       background-repeat: no-repeat;
       background-position: center center;
       background-attachment: fixed;
-      -webkit-background-size: 50%;
+/*       -webkit-background-size: 50%;
       -moz-background-size: 50%;
-      -o-background-size: 50%; 
+      -o-background-size: 50%;  */
       background-size: 50%; 
       color: #ffffff;
       padding: 100px 25px;
