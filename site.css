@@ -54,10 +54,13 @@ body {
   font-family: Montserrat, sans-serif;
   background-color: #2e3842;
   background-image: url('img/laptop.png');
-  background-position: center center;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
   background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; 
+  background-size: cover; 
   color: #ffffff;
   padding: 100px 25px;
 }
@@ -142,10 +145,13 @@ body {
   /* PORTFOLIO CONTAINER */
   #portfolio {
     background-image: url('img/laptop.png');
-    background-size: cover;
-    background-position: center center;
     background-repeat: no-repeat;
+    background-position: center center;
     background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; 
+    background-size: cover; 
   }
 
   .panel {
