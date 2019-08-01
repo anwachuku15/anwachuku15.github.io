@@ -71,8 +71,8 @@ body {
 
 .jumbotron { 
   font-family: Montserrat, sans-serif;
-  background-color: #ffffff;
-/*   background-image: url('img/laptopsmall.png'); */
+/*   background-color: #ffffff; */
+  background-image: url('img/laptopsmall.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
