@@ -51,15 +51,28 @@ body {
 }
 
 .jumbotron { 
-    font-family: Montserrat, sans-serif;
-    background-color: #2e3842;
-/*     background-image: linear-gradient( to bottom right, #e43636, #1e1c1c); */
-    background-image: url('img/laptop.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #ffffff;
-    padding: 100px 25px;
+  font-family: Montserrat, sans-serif;
+  background-color: #2e3842;
+  /* background-image: linear-gradient( to bottom right, #e43636, #1e1c1c); */
+  background-image: url('img/twitter.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #ffffff;
+  padding: 100px 25px;
+}
+@media only screen and (min-device-width: 600px) {
+  .jumbotron { 
+      font-family: Montserrat, sans-serif;
+      background-color: #2e3842;
+      /* background-image: linear-gradient( to bottom right, #e43636, #1e1c1c); */
+      background-image: url('img/laptop.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #ffffff;
+      padding: 100px 25px;
+  }
 }
 
 .bg-grey {
