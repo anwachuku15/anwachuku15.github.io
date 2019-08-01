@@ -50,20 +50,6 @@ body {
     padding: 60px 50px;
 }
 
-.jumbotron { 
-  font-family: Montserrat, sans-serif;
-  background-color: #2e3842;
-  background-image: url('img/laptop.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover; 
-  background-size: cover; 
-  color: #ffffff;
-  padding: 100px 25px;
-}
 @media screen and (max-width: 479px) {
   .jumbotron { 
     font-family: Montserrat, sans-serif;
@@ -80,6 +66,22 @@ body {
     padding: 100px 25px;
   }
 }
+
+.jumbotron { 
+  font-family: Montserrat, sans-serif;
+  background-color: #2e3842;
+  background-image: url('img/laptop.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; 
+  background-size: cover; 
+  color: #ffffff;
+  padding: 100px 25px;
+}
+
 /* @media only screen and (min-device-width: 600px) {
   .jumbotron { 
       font-family: Montserrat, sans-serif;
@@ -159,17 +161,6 @@ body {
   }
 
   /* PORTFOLIO CONTAINER */
-  #portfolio {
-    background-image: url('img/laptop.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover; 
-    background-size: cover; 
-  }
-
 @media screen and (max-width: 479px) {
   #portfolio { 
     font-family: Montserrat, sans-serif;
@@ -186,6 +177,19 @@ body {
     padding: 100px 25px;
   }
 }
+
+  #portfolio {
+    background-image: url('img/laptop.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; 
+    background-size: cover; 
+  }
+
+
 
   .panel {
     border: 1px solid #a71e1e; 
