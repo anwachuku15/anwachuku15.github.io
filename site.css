@@ -72,11 +72,26 @@ body {
   }
 } */
 
-@media screen and (max-device-width: 479px) {
+.jumbotron { 
+  font-family: Montserrat, sans-serif;
+  background-color: #2e3842;
+  background-image: url('img/twitter.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; 
+  background-size: cover; 
+  color: #ffffff;
+  padding: 100px 25px;
+}
+
+@media screen and (min-device-width: 600px) {
     .jumbotron { 
       font-family: Montserrat, sans-serif;
       background-color: #2e3842;
-      background-image: url('img/twitternew.png');
+      background-image: url('img/laptop.png');
       background-repeat: no-repeat;
       background-position: center center;
       background-attachment: fixed;
@@ -88,20 +103,7 @@ body {
       padding: 100px 25px;
     }
   }
-.jumbotron { 
-  font-family: Montserrat, sans-serif;
-  background-color: #2e3842;
-  background-image: url('img/laptop.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover; 
-  background-size: cover; 
-  color: #ffffff;
-  padding: 100px 25px;
-}
+
 
 
 
