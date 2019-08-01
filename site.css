@@ -180,7 +180,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;  */
   background-size: cover; 
-  color: #f70404;
+  color: #ffffff;
   padding: 100px 25px;
 }
 
@@ -196,7 +196,7 @@ body {
       -moz-background-size: 50%;
       -o-background-size: 50%;  */
       background-size: cover; 
-      color: #f70404;
+      color: #ffffff;
       padding: 100px 25px;
     }
   }
