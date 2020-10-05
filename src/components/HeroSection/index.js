@@ -5,12 +5,9 @@ import {
   VideoBg,
   HeroContent,
   HeroH1,
-  HeroBtnWrapper,
-  HeroBtn,
-  Arrow,
 } from "./HeroElements";
+import Button from "../ScrollButton";
 import Video from "../../assets/videos/herovideo.mp4";
-import { KeyboardArrowDownRounded } from "@material-ui/icons";
 
 const HeroSection = () => {
   return (
@@ -35,12 +32,7 @@ const HeroSection = () => {
           .
         </HeroH1>
         <HeroH1>I'm a full-stack web developer.</HeroH1>
-        <HeroBtnWrapper>
-          <HeroBtn to="portfolio">See my work!</HeroBtn>
-          <Arrow>
-            <KeyboardArrowDownRounded fontSize="small" />
-          </Arrow>
-        </HeroBtnWrapper>
+        <Button title="See my work!" direction="down" />
       </HeroContent>
     </HeroContainer>
   );
