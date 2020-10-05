@@ -19,7 +19,7 @@ const Navbar = ({ toggleMenu }) => {
       <Nav>
         <NavContainer>
           <NavLogo to="/">
-            <NavLogoIcon src={require("../../images/A.png")} />
+            <NavLogoIcon src={require("../../assets/images/A.png")} />
           </NavLogo>
           <MobileIcon onClick={toggleMenu}>
             <FaBars />
