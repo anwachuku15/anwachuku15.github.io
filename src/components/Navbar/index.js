@@ -1,15 +1,52 @@
 import React from "react";
+import { FaBars } from "react-icons/fa";
+import {
+  Nav,
+  NavContainer,
+  NavLogo,
+  NavLogoIcon,
+  MobileIcon,
+  NavMenu,
+  NavItem,
+  NavLinks,
+  NavBtn,
+  NavBtnLink,
+} from "./NavbarElements";
 
 const Navbar = () => {
   return (
     <>
-      {/* <Nav>
-        <NavbarContainer>
-            <NavLogo>
+      <Nav>
+        <NavContainer>
+          <NavLogo to="/">
+            <NavLogoIcon src={require("../../images/A.png")} />
+          </NavLogo>
+          <MobileIcon>
+            <FaBars />
+          </MobileIcon>
 
-            </NavLogo>
-        </NavbarContainer>
-    </Nav> */}
+          <NavMenu>
+            <NavItem>
+              <NavLinks to="/">Home</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="about">About</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="about">Portfolio</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="about">Contact</NavLinks>
+            </NavItem>
+          </NavMenu>
+
+          <NavBtn>
+            <NavBtnLink href="https://github.com/anwachuku15" target="_blank">
+              Github
+            </NavBtnLink>
+          </NavBtn>
+        </NavContainer>
+      </Nav>
     </>
   );
 };
