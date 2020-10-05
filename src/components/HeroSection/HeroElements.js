@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link as ScrollLink } from "react-scroll";
 
 export const HeroContainer = styled.div`
   background: #0c0c0c;
@@ -11,7 +10,21 @@ export const HeroContainer = styled.div`
   position: relative;
   z-index: 1;
 
-  /* TODO: add :before styles */
+  :before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.6) 100%
+      ),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+    z-index: 2;
+  }
 `;
 
 export const HeroBg = styled.div`
@@ -70,48 +83,5 @@ export const HeroP = styled.p`
 
   @media screen and (max-width: 480px) {
     font-size: 18px;
-  }
-`;
-
-export const HeroBtnWrapper = styled.div`
-  display: flex;
-  width: max-content;
-  align-self: center;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  padding: 6px 15px 8px 15px;
-  border-radius: 3px;
-  border: 2px solid white;
-  background-color: transparent;
-  transition: background-color 150ms, border 150ms, opacity 1s ease;
-  position: relative;
-  cursor: pointer;
-
-  &:hover {
-    background-color: rgba(201, 201, 201, 0.384);
-    border: 2px solid transparent;
-
-    align-items: center;
-  }
-`;
-
-export const HeroBtn = styled(ScrollLink)`
-  display: flex;
-  color: white !important;
-  text-decoration: none;
-  font-size: 20px;
-`;
-
-export const Arrow = styled.div`
-  position: relative;
-  bottom: -3px;
-  margin-left: -20px;
-  color: transparent;
-  transition: all 200ms;
-
-  ${HeroBtnWrapper}:hover & {
-    margin-left: 10px !important;
-    color: white;
   }
 `;
