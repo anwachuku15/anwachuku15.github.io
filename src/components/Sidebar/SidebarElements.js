@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Link as ScrollLink } from "react-scroll";
 
 export const SidebarContainer = styled.aside`
   position: fixed;
