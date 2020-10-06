@@ -22,7 +22,8 @@ export const HeroContainer = styled.div`
         rgba(0, 0, 0, 0.2) 0%,
         rgba(0, 0, 0, 0.6) 100%
       ),
-      linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+      linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, #010606 100%);
+    /* mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
     z-index: 2;
   }
 `;
