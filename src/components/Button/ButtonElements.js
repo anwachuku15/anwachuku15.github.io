@@ -18,7 +18,7 @@ export const BtnWrapper = styled.div`
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(201, 201, 201, 0.384);
+    background-color: rgba(210, 63, 63, 0.384);
     border: 2px solid transparent;
 
     align-items: center;

@@ -6,13 +6,33 @@ import {
   ArrowForwardIosRounded,
 } from "@material-ui/icons";
 
-const Button = ({ title, direction, route }) => {
+const Button = ({
+  title,
+  direction,
+  scrollTo,
+  route,
+  // primary,
+  // dark,
+  // dark2,
+}) => {
   return (
     <BtnWrapper>
       {route ? (
         <RouteBtn to={route}>{title}</RouteBtn>
       ) : (
-        <Btn to="portfolio">{title}</Btn>
+        <Btn
+          to={scrollTo}
+          smooth={true}
+          duration={500}
+          spy={true}
+          exact="true"
+          offset={-80}
+          // primary={primary ? 1 : 0}
+          // dark={dark ? 1 : 0}
+          // dark2={dark2 ? 1 : 0}
+        >
+          {title}
+        </Btn>
       )}
       <Arrow>
         {direction === "down" && <KeyboardArrowDownRounded fontSize="small" />}
