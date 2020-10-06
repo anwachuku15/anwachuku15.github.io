@@ -19,7 +19,8 @@ const Navbar = ({ toggleMenu }) => {
       <Nav>
         <NavContainer>
           <NavLogo to="/">
-            <NavLogoIcon src={require("../../assets/images/A.png")} />
+            Andrew Nwachuku
+            {/* <NavLogoIcon src={require("../../assets/images/A.png")} /> */}
           </NavLogo>
           <MobileIcon onClick={toggleMenu}>
             <FaBars />
