@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
+const lightRed = "#ffefef";
+const black = "#060101";
+const navy = "#322f4e";
+const lightBlack = "#181625";
+
 export const AboutContainer = styled.div`
-  color: white;
-  background: ${({ lightBg }) => (lightBg ? "#f9f9f9" : "#060101")};
+  color: ${({ lightBg }) => (lightBg ? "#000" : "#fff")};
+  background: ${({ lightBg }) => (lightBg ? lightRed : black)};
 
   @media screen and (max-width: 768px) {
     padding: 100px 0;
@@ -66,8 +71,7 @@ export const Heading = styled.h1`
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
-  color: ${({ lightText }) => (lightText ? "#f7f8fa" : "#d23f3f")};
-
+  color: ${({ lightText }) => (lightText ? "#fff" : navy)};
   @media screen and (max-width: 480px) {
     font-size: 32px;
   }
@@ -78,7 +82,7 @@ export const Subtitle = styled.p`
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
-  color: ${({ darkText }) => (darkText ? "#010606" : "#fff")};
+  color: ${({ darkText }) => (darkText ? lightBlack : "#fff")};
 `;
 
 export const BtnWrap = styled.div`

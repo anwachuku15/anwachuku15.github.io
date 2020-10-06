@@ -45,6 +45,7 @@ const AboutSection = ({
                     title={buttonLabel}
                     direction="down"
                     scrollTo="portfolio"
+                    lightBg={lightBg}
                     // primary={primary}
                     // dark={dark}
                   />
