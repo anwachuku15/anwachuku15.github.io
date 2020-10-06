@@ -32,7 +32,12 @@ const HeroSection = () => {
           .
         </HeroH1>
         <HeroH1>I'm a full-stack web developer.</HeroH1>
-        <Button title="See my work!" direction="down" scrollTo="portfolio" />
+        <Button
+          title="See my work!"
+          direction="down"
+          scrollTo="portfolio"
+          lightBg={false}
+        />
       </HeroContent>
     </HeroContainer>
   );
