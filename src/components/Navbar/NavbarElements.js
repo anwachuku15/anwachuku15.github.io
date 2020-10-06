@@ -30,7 +30,7 @@ export const NavContainer = styled.div`
 `;
 
 export const NavLogo = styled(Link)`
-  color: red;
+  color: #d82c2c;
   justify-self: flex-start;
   cursor: pointer;
   font-size: 1.5rem;
@@ -39,6 +39,7 @@ export const NavLogo = styled(Link)`
   margin-left: 24px;
   font-weight: bold;
   text-decoration: none;
+  font-family: "Sansita Swashed", cursive;
 `;
 
 export const NavLogoIcon = styled.img`
