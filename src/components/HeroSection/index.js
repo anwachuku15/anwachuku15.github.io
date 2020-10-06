@@ -6,12 +6,12 @@ import {
   HeroContent,
   HeroH1,
 } from "./HeroElements";
-import Button from "../ScrollButton";
+import Button from "../Button";
 import Video from "../../assets/videos/herovideo.mp4";
 
 const HeroSection = () => {
   return (
-    <HeroContainer>
+    <HeroContainer className="HeroContainer">
       <HeroBg>
         <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
       </HeroBg>
@@ -32,7 +32,7 @@ const HeroSection = () => {
           .
         </HeroH1>
         <HeroH1>I'm a full-stack web developer.</HeroH1>
-        <Button title="See my work!" direction="down" />
+        <Button title="See my work!" direction="down" scrollTo="portfolio" />
       </HeroContent>
     </HeroContainer>
   );
