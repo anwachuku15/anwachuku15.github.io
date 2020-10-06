@@ -1,8 +1,9 @@
 export const object1 = {
   id: "about",
-  lightBg: false,
-  lightText: true,
+  lightBg: true,
+  lightText: false,
   lightTextDesc: true,
+  darkText: true,
   topline: "Web Application Development",
   heading: "Fast, responsive web apps that look great on any device.",
   description:
@@ -13,7 +14,6 @@ export const object1 = {
   alt: "Car",
   dark: true,
   primary: true,
-  darkText: false,
 };
 
 export const object2 = {
