@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
 
+const navy = "#322f4e";
+
 export const BtnWrapper = styled.div`
   display: flex;
   width: max-content;
@@ -11,7 +13,8 @@ export const BtnWrapper = styled.div`
   margin-top: 20px;
   padding: 6px 15px 8px 15px;
   border-radius: 50px;
-  border: 2px solid white;
+  border: ${({ lightBg }) =>
+    lightBg ? `${"2px solid #322f4e"}` : `${"2px solid white"}`};
   background-color: transparent;
   transition: background-color 150ms, border 150ms, opacity 1s ease;
   position: relative;
@@ -27,7 +30,8 @@ export const BtnWrapper = styled.div`
 
 export const Btn = styled(ScrollLink)`
   display: flex;
-  color: white !important;
+  /* color: white !important; */
+  color: ${({ lightBg }) => (lightBg ? "#322f4e" : "white")};
   text-decoration: none;
   font-size: 18px;
 `;

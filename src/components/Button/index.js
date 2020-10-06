@@ -11,16 +11,18 @@ const Button = ({
   direction,
   scrollTo,
   route,
+  lightBg,
   // primary,
   // dark,
   // dark2,
 }) => {
   return (
-    <BtnWrapper>
+    <BtnWrapper lightBg={lightBg}>
       {route ? (
         <RouteBtn to={route}>{title}</RouteBtn>
       ) : (
         <Btn
+          lightBg={lightBg}
           to={scrollTo}
           smooth={true}
           duration={500}
