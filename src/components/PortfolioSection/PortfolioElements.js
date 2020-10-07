@@ -1,20 +1,25 @@
 import styled from "styled-components";
 
 export const PortfolioContainer = styled.div`
-  height: 800px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 30px;
   align-items: center;
   background: #010606;
 
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 1000px) {
+    padding-top: 50px;
+  } */
+  /* @media screen and (max-width: 768px) {
     height: 1100px;
   }
 
   @media screen and (max-width: 480px) {
     height: 1300px;
-  }
+  } */
 `;
 
 export const PortfolioWrapper = styled.div`
@@ -64,6 +69,7 @@ export const PortfolioIcon = styled.img`
 export const PortfolioH1 = styled.h1`
   font-size: 2.5rem;
   color: white;
+  /* margin-top: 10px; */
   margin-bottom: 64px;
 
   @media screen and (max-width: 480px) {
