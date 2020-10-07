@@ -1,9 +1,9 @@
 export const object1 = {
   id: "about",
-  lightBg: true,
-  lightText: false,
+  lightBg: false,
+  lightText: true,
   lightTextDesc: true,
-  darkText: true,
+  darkText: false,
   topline: "Web Application Development",
   heading: "Fast, responsive web apps that look great on any device.",
   description:
@@ -11,24 +11,28 @@ export const object1 = {
   buttonLabel: "See more",
   imgStart: false,
   img: require("../../assets/images/responsivewebapp.svg"),
-  alt: "Car",
+  alt: "laptop-mobile",
   dark: true,
   primary: true,
 };
 
 export const object2 = {
   id: "about",
-  lightBg: false,
-  lightText: true,
-  lightTextDesc: true,
-  topLine: "Mobile Application Development",
-  headline:
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
+  darkText: true,
+  topline: "Mobile Application Development",
+  heading:
     "Cross-platform apps built with efficiency and speed for iOS and Android.",
   description:
     "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   buttonLabel: "See more",
   imgStart: true,
   img: require("../../assets/images/mobileinterface.svg"),
+  alt: "mobile",
+  dark: true,
+  primary: true,
 };
 
 export const object3 = {
@@ -36,9 +40,17 @@ export const object3 = {
   lightBg: false,
   lightText: true,
   lightTextDesc: true,
-  topLine: "Database Design",
-  headline:
+  topline: "Database Design",
+  heading:
     "Proper Database design for effective Web & Mobile development, always aiming for performance, scale and stability",
+  description:
+    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  buttonLabel: "See more",
+  imgStart: false,
+  img: require("../../assets/images/database.svg"),
+  alt: "database",
+  dark: true,
+  primary: true,
 };
 
 export const object4 = {
