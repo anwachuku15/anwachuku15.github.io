@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
 export const Nav = styled.nav`
-  background: transparent;
+  background: ${({ scrollNav }) => (scrollNav ? "black" : "transparent")};
   height: 80px;
   margin-top: -80px;
   display: flex;
@@ -13,6 +13,7 @@ export const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 10;
+  transition: background 0.5s ease;
 
   @media screen and (max-width: 960px) {
     transition: 0.8 all ease;
@@ -86,9 +87,14 @@ export const NavLinks = styled(ScrollLink)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  transition: border-bottom-color 0.2s ease-in-out;
 
-  &:active {
-    border-bottom: 3px solid red;
+  &.active {
+    border-bottom-color: red;
+    transition: border-bottom-color 0.2s ease-in-out;
   }
 `;
 
