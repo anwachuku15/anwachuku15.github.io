@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
 
-const navy = "#322f4e";
+// const navy = "#322f4e";
 
 export const BtnWrapper = styled.div`
   display: flex;
