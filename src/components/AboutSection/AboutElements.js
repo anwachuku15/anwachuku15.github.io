@@ -82,7 +82,7 @@ export const Subtitle = styled.p`
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
-  color: ${({ darkText }) => (darkText ? lightBlack : "#fff")};
+  color: ${({ lightTextDesc }) => (lightTextDesc ? "#fff" : lightBlack)};
 `;
 
 export const BtnWrap = styled.div`
