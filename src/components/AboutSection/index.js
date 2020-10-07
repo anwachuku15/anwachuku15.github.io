@@ -22,6 +22,7 @@ const AboutSection = ({
   lightText,
   heading,
   description,
+  lightTextDesc,
   darkText,
   img,
   alt,
@@ -39,15 +40,15 @@ const AboutSection = ({
               <TextWrapper>
                 <TopLine>{topline}</TopLine>
                 <Heading lightText={lightText}>{heading}</Heading>
-                <Subtitle darkText={darkText}>{description}</Subtitle>
+                <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
                 <BtnWrap>
                   <Button
                     title={buttonLabel}
                     direction="down"
                     scrollTo="portfolio"
                     lightBg={lightBg}
-                    // primary={primary}
-                    // dark={dark}
+                    primary={primary}
+                    dark={dark}
                   />
                 </BtnWrap>
               </TextWrapper>
