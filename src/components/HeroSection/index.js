@@ -11,7 +11,7 @@ import Video from "../../assets/videos/herovideo.mp4";
 
 const HeroSection = () => {
   return (
-    <HeroContainer className="HeroContainer">
+    <HeroContainer className="HeroContainer" id="hero">
       <HeroBg>
         <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
       </HeroBg>
