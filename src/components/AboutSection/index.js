@@ -33,7 +33,7 @@ const AboutSection = ({
   const id = "id";
   return (
     <>
-      <AboutContainer lightBg={lightBg} id={id}>
+      <AboutContainer lightBg={lightBg} id="about">
         <AboutWrapper>
           <AboutRow imgStart={imgStart}>
             <Column1>
