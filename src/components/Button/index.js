@@ -12,9 +12,9 @@ const Button = ({
   scrollTo,
   route,
   lightBg,
-  // primary,
-  // dark,
-  // dark2,
+  primary,
+  dark,
+  dark2,
 }) => {
   return (
     <BtnWrapper lightBg={lightBg}>
@@ -29,9 +29,9 @@ const Button = ({
           spy={true}
           exact="true"
           offset={-80}
-          // primary={primary ? 1 : 0}
-          // dark={dark ? 1 : 0}
-          // dark2={dark2 ? 1 : 0}
+          primary={primary ? 1 : 0}
+          dark={dark ? 1 : 0}
+          dark2={dark2 ? 1 : 0}
         >
           {title}
         </Btn>
