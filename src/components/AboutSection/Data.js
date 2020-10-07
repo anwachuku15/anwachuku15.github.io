@@ -1,9 +1,9 @@
 export const object1 = {
   id: "about",
-  lightBg: false,
-  lightText: true,
-  lightTextDesc: true,
-  darkText: false,
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
+  darkText: true,
   topline: "Web Application Development",
   heading: "Fast, responsive web apps that look great on any device.",
   description:
