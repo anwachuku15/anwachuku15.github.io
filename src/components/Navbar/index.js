@@ -17,18 +17,21 @@ import { animateScroll as scroll } from "react-scroll";
 
 const Navbar = ({ toggleMenu }) => {
   const [scrollNav, setScrollNav] = useState(false);
+  const [pathname, setPathname] = useState();
 
   const changeNav = () => {
-    if (window.scrollY >= 720) {
+    if (window.scrollY >= 80) {
       setScrollNav(true);
     } else {
       setScrollNav(false);
     }
   };
 
+  let path = window.location.pathname;
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
-  }, []);
+    console.log(path);
+  }, [path]);
 
   const toggleHome = () => {
     scroll.scrollToTop();
