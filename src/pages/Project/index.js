@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useCallback } from "react";
 import { projects } from "../../components/PortfolioSection/ProjectData";
-
+import { ProjectContainer, ProjectWrapper } from "./ProjectElements";
 const Project = () => {
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -40,20 +40,29 @@ const Project = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: 600,
+          height: 570,
           marginTop: 80,
         }}
       >
-        <h1 style={{ fontSize: 48 }}>404</h1>
-        <p style={{ fontSize: 24 }}>Page Not Found</p>
+        <h1 style={{ fontSize: 48, color: "#d23f3f" }}>404</h1>
+        <p style={{ fontSize: 24, color: "#101522" }}>Page Not Found</p>
+        <img
+          src={require("../../assets/images/lost.svg")}
+          alt="lost"
+          style={{ objectFit: "contain", width: 400 }}
+        />
       </div>
     );
   }
 
   return (
-    <div style={{ marginTop: 80 }}>
-      <h1>{project.name}</h1>
-    </div>
+    <>
+      <ProjectContainer>
+        <ProjectWrapper>
+          <h1>{project.name}</h1>
+        </ProjectWrapper>
+      </ProjectContainer>
+    </>
   );
 };
 
