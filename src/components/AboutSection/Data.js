@@ -9,7 +9,7 @@ export const object1 = {
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   buttonLabel: "See more",
-  imgStart: false,
+  imgStart: true,
   img: require("../../assets/images/responsivewebapp.svg"),
   alt: "laptop-mobile",
   dark: true,
@@ -28,8 +28,8 @@ export const object2 = {
   description:
     "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   buttonLabel: "See more",
-  imgStart: true,
-  img: require("../../assets/images/mobileinterface.svg"),
+  imgStart: false,
+  img: require("../../assets/images/mailbox.svg"),
   alt: "mobile",
   dark: true,
   primary: true,
