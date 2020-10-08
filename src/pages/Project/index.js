@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useCallback } from "react";
 import { projects } from "../../components/PortfolioSection/ProjectData";
 import { ProjectContainer, ProjectWrapper } from "./ProjectElements";
+
 const Project = () => {
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
