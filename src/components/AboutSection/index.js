@@ -30,7 +30,7 @@ const AboutSection = ({
   primary,
   buttonLabel,
 }) => {
-  const id = "id";
+  // const id = "id";
   return (
     <>
       <AboutContainer lightBg={lightBg} id="about">
