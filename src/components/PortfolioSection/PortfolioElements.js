@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const PortfolioContainer = styled.div`
+export const PortfolioContainer = styled(motion.div)`
   /* max-height: 860px; */
+  position: relative;
   height: auto;
   min-height: 860px;
   display: flex;
@@ -10,7 +12,7 @@ export const PortfolioContainer = styled.div`
   padding-top: 100px;
   padding-bottom: 30px;
   align-items: center;
-  background: #010606;
+  background: #2e1c1c;
 
   /* @media screen and (max-width: 1000px) {
     padding-top: 50px;
@@ -24,7 +26,7 @@ export const PortfolioContainer = styled.div`
   } */
 `;
 
-export const PortfolioWrapper = styled.div`
+export const PortfolioWrapper = styled(motion.div)`
   max-width: 1000px;
   margin: 0 auto;
   display: grid;
@@ -43,7 +45,7 @@ export const PortfolioWrapper = styled.div`
   }
 `;
 
-export const PortfolioCard = styled.div`
+export const PortfolioCard = styled(motion.div)`
   background: white;
   display: flex;
   flex-direction: column;
@@ -53,22 +55,64 @@ export const PortfolioCard = styled.div`
   max-height: 340px;
   padding: 30px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  /* transition: all 0.2s ease-in-out; */
 
-  &:hover {
-    transform: scale(1.05);
+  /* &:hover {
+    transform: scale(1.01);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+  } */
+`;
+
+export const SelectedCard = styled(motion.div)`
+  background: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 560px;
+  /* width: 40%; */
+  width: 700px;
+  top: 100px;
+  z-index: 1;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 10px;
+  padding: 30px 30px 15px 30px;
+
+  @media screen and (max-width: 740px) {
+    width: 460px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 90%;
   }
 `;
 
-export const PortfolioIcon = styled.img`
-  height: 160px;
-  width: 160px;
-  margin-bottom: 10px;
+export const PortfolioIcon = styled(motion.img)`
+  /* height: 160px; */
+  /* width: 160px; */
+  /* margin-bottom: 10px; */
+  width: 100%;
+  height: 195px;
 `;
 
-export const PortfolioH1 = styled.h1`
+export const SelectedIcon = styled(motion.img)`
+  /* height: 240px; */
+  height: 70%;
+  width: 90%;
+  @media screen and (max-width: 740px) {
+    width: 400px;
+    height: 65%;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 360px;
+    height: 60%;
+  }
+`;
+
+export const PortfolioH1 = styled(motion.h1)`
   font-size: 2.5rem;
   color: white;
   /* margin-top: 10px; */
@@ -79,14 +123,103 @@ export const PortfolioH1 = styled.h1`
   }
 `;
 
-export const PortfolioH2 = styled.h2`
+export const PortfolioH2 = styled(motion.h2)`
   font-size: 1rem;
   margin-bottom: 10px;
   color: black !important;
 `;
 
-export const PortfolioP = styled.p`
+export const SelectedH2 = styled(motion.h2)`
+  text-align: left;
+  width: 100%;
+`;
+
+export const PortfolioP = styled(motion.p)`
   font-size: 1rem;
   text-align: center;
   color: black !important;
+`;
+
+export const SelectedP = styled(motion.p)``;
+
+export const ModalButtonsContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 20px;
+`;
+
+export const ViewSiteButtonsContainer = styled(motion.div)`
+  display: flex;
+`;
+export const ViewSiteButtonWrapper = styled(motion.a)`
+  display: flex;
+  text-decoration: none;
+  width: max-content;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 20px; */
+  padding: 6px 15px 8px 15px;
+  border-radius: 50px;
+  border: 2px solid #d82c2c;
+  background-color: transparent;
+  transition: background-color 150ms, border 150ms, opacity 1s ease;
+  position: relative;
+  cursor: pointer;
+  margin-right: 10px;
+
+  &:hover {
+    background-color: #d82c2c;
+    border: 2px solid transparent;
+    align-items: center;
+  }
+`;
+export const ViewSiteButton = styled(motion.p)`
+  /* display: flex; */
+  color: #d82c2c;
+
+  ${ViewSiteButtonWrapper}:hover & {
+    color: white;
+  }
+`;
+
+export const GoToSiteIcon = styled.div`
+  position: relative;
+  bottom: -3px;
+  margin-left: -20px;
+  color: transparent;
+  transition: all 200ms;
+
+  ${ViewSiteButtonWrapper}:hover & {
+    margin-left: 10px !important;
+    color: white;
+  }
+`;
+
+export const ExitButton = styled(motion.div)`
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  color: #8a8a8a;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.25);
+    color: #322f4e;
+    transition: all 0.2s ease-in-out;
+  }
+`;
+
+export const Overlay = styled(motion.div)`
+  z-index: 1;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  will-change: opacity;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  /* max-width: 990px; */
 `;
