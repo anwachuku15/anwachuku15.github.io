@@ -30,7 +30,6 @@ const ContactSection = ({
   primary,
   buttonLabel,
 }) => {
-  const id = "id";
   return (
     <>
       <ContactContainer lightBg={lightBg} id="contact">
