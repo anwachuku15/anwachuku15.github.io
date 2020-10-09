@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
-import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
-import { wrap } from "@popmotion/popcorn";
+import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
+// import { wrap } from "@popmotion/popcorn";
 
 import {
   PortfolioContainer,
@@ -10,14 +10,14 @@ import {
   PortfolioCard,
   PortfolioIcon,
   PortfolioH2,
-  PortfolioP,
+  // PortfolioP,
   ModalButtonsContainer,
   ViewSiteButtonsContainer,
   ViewSiteButtonWrapper,
   ViewSiteButton,
   GoToSiteIcon,
   ExitButton,
-  SelectedIconContainer,
+  // SelectedIconContainer,
   SelectedCard,
   SelectedIcon,
   SelectedH2,
@@ -30,26 +30,26 @@ import LaunchIcon from "@material-ui/icons/Launch";
 import CloseIcon from "@material-ui/icons/Close";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
-const variants = {
-  enter: (direction) => {
-    return {
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-    };
-  },
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-    };
-  },
-};
+// const variants = {
+//   enter: (direction) => {
+//     return {
+//       x: direction > 0 ? 1000 : -1000,
+//       opacity: 0,
+//     };
+//   },
+//   center: {
+//     zIndex: 1,
+//     x: 0,
+//     opacity: 1,
+//   },
+//   exit: (direction) => {
+//     return {
+//       zIndex: 0,
+//       x: direction < 0 ? 1000 : -1000,
+//       opacity: 0,
+//     };
+//   },
+// };
 
 const PortfolioSection = () => {
   const [selectedId, setSelectedId] = useState(null);
