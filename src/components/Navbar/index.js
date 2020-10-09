@@ -17,7 +17,7 @@ import { animateScroll as scroll } from "react-scroll";
 
 const Navbar = ({ toggleMenu }) => {
   const [scrollNav, setScrollNav] = useState(false);
-  const [pathname, setPathname] = useState();
+  // const [pathname, setPathname] = useState();
 
   const changeNav = () => {
     if (window.scrollY >= 80) {
