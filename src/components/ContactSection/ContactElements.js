@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const lightRed = "#ffefef";
-const black = "#060101";
+// const black = "#060101";
 const navy = "#322f4e";
 const lightBlack = "#181625";
 
