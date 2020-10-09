@@ -21,18 +21,22 @@ export const BtnWrapper = styled.div`
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(210, 63, 63, 0.384);
+    background-color: rgba(210, 63, 63, 1);
     border: 2px solid transparent;
-
     align-items: center;
   }
 `;
 
-export const Btn = styled(ScrollLink)`
+export const ScrollBtn = styled(ScrollLink)`
   display: flex;
   color: ${({ lightBg }) => (lightBg ? "#322f4e" : "white")};
   text-decoration: none;
   font-size: 18px;
+  transition: color 150ms ease;
+
+  ${BtnWrapper}:hover & {
+    color: white;
+  }
 `;
 
 export const RouteBtn = styled(Link)`
@@ -40,6 +44,23 @@ export const RouteBtn = styled(Link)`
   color: white !important;
   text-decoration: none;
   font-size: 20px;
+  transition: color 150ms ease;
+
+  ${BtnWrapper}:hover & {
+    color: white;
+  }
+`;
+
+export const ModalBtn = styled.p`
+  display: flex;
+  color: ${({ lightBg }) => (lightBg ? "#322f4e" : "white")};
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 150ms ease;
+
+  ${BtnWrapper}:hover & {
+    color: white;
+  }
 `;
 
 export const Arrow = styled.div`
