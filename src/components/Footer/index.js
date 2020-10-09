@@ -1,11 +1,11 @@
 import React from "react";
 import {
   FooterContainer,
-  FooterLink,
-  FooterLinkItems,
-  FooterLinksContainer,
-  FooterLinksWrapper,
-  FooterName,
+  // FooterLink,
+  // FooterLinkItems,
+  // FooterLinksContainer,
+  // FooterLinksWrapper,
+  // FooterName,
   FooterWrapper,
   SocialMedia,
   SocialMediaWrapper,
