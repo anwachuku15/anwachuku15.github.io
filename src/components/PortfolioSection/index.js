@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
+import { wrap } from "@popmotion/popcorn";
 
 import {
   PortfolioContainer,
@@ -29,12 +30,31 @@ import LaunchIcon from "@material-ui/icons/Launch";
 import CloseIcon from "@material-ui/icons/Close";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
+const variants = {
+  enter: (direction) => {
+    return {
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    };
+  },
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction) => {
+    return {
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+    };
+  },
+};
+
 const PortfolioSection = () => {
-  // FRAMER ANIMATION
   const [selectedId, setSelectedId] = useState(null);
 
   const handleClick = (id) => {
-    // console.log(id);
     setSelectedId(id);
   };
 
