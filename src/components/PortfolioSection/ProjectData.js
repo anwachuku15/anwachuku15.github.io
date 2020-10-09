@@ -24,7 +24,7 @@ export const projects = [
     linkTo: "/amazon-clone",
     name: "Amazon Clone",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "A full stack Amazon clone with Stripe integration and Firebase back end.",
     url: "https://github.com/anwachuku15/amazon-clone",
     github: "https://github.com/anwachuku15/amazon-clone",
     images: [
