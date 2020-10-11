@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 // import { Link } from "react-router-dom";
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
 // import { wrap } from "@popmotion/popcorn";
@@ -17,47 +17,80 @@ import {
   ViewSiteButton,
   GoToSiteIcon,
   ExitButton,
-  // SelectedIconContainer,
+  // SelectedImageContainer,
   SelectedCard,
-  SelectedIcon,
+  CarouselWrapper,
+  CarouselWindow,
+  Carousel,
+  SelectedImage,
+  SelectedTextContent,
   SelectedH2,
   SelectedP,
   Overlay,
+  NextButton,
+  PrevButton,
 } from "./PortfolioElements";
+import "./PortfolioSection.css";
 import Button from "../Button";
 import { projects } from "./ProjectData";
 import LaunchIcon from "@material-ui/icons/Launch";
 import CloseIcon from "@material-ui/icons/Close";
 import GitHubIcon from "@material-ui/icons/GitHub";
-
-// const variants = {
-//   enter: (direction) => {
-//     return {
-//       x: direction > 0 ? 1000 : -1000,
-//       opacity: 0,
-//     };
-//   },
-//   center: {
-//     zIndex: 1,
-//     x: 0,
-//     opacity: 1,
-//   },
-//   exit: (direction) => {
-//     return {
-//       zIndex: 0,
-//       x: direction < 0 ? 1000 : -1000,
-//       opacity: 0,
-//     };
-//   },
-// };
+import {
+  ArrowBackIosRounded,
+  ArrowForwardIosRounded,
+} from "@material-ui/icons";
 
 const PortfolioSection = () => {
   const [selectedId, setSelectedId] = useState(null);
-
-  const handleClick = (id) => {
+  const [images, setImages] = useState(null);
+  const [imageIndex, setImageIndex] = useState(0);
+  const selectProject = (id) => {
     setSelectedId(id);
+    setImages(projects[id - 1].images);
+  };
+  const carousel = useRef();
+  // transition 0.7s
+  const slideControl = (n) => {
+    // carousel.current.style.transition = 0.7;
+    carousel.current.classList.add(n < 0 ? "prevSlide" : "nextSlide");
+    setTimeout(() => {
+      if (imageIndex === 2 && n === 1) {
+        setImageIndex(0);
+      } else if (imageIndex === 0 && n === -1) {
+        setImageIndex(2);
+      } else {
+        setImageIndex(imageIndex + n);
+      }
+      carousel.current.classList.remove(n < 0 ? "prevSlide" : "nextSlide");
+    }, 700);
   };
 
+  const swipeControl = (n) => {
+    carousel.current.classList.add(n < 0 ? "swipePrev" : "swipeNext");
+    setTimeout(() => {
+      if (imageIndex === 2 && n === 1) {
+        setImageIndex(0);
+      } else if (imageIndex === 0 && n === -1) {
+        setImageIndex(2);
+      } else {
+        setImageIndex(imageIndex + n);
+      }
+      carousel.current.classList.remove(n < 0 ? "swipePrev" : "swipeNext");
+    }, 200);
+  };
+
+  const closeModal = () => {
+    setSelectedId(null);
+    setImages(null);
+    setImageIndex(0);
+  };
+
+  const swipeConfidenceThreshold = 10000;
+  const swipePower = (offset, velocity) => {
+    return Math.abs(offset) * velocity;
+  };
+  // snap points
   return (
     <PortfolioContainer id="portfolio">
       <PortfolioH1>Projects</PortfolioH1>
@@ -66,13 +99,13 @@ const PortfolioSection = () => {
           {projects.map((project) => (
             <PortfolioCard
               layoutId={project.id}
-              onClick={() => handleClick(project.id)}
+              onClick={() => selectProject(project.id)}
             >
-              <PortfolioIcon src={project.img} />
+              <PortfolioIcon src={project.images[0]} />
               <PortfolioH2>{project.name}</PortfolioH2>
               <Button
                 title="Learn More"
-                openModal={() => handleClick(project.id)}
+                openModal={() => selectProject(project.id)}
                 lightBg={true}
               />
 
@@ -84,21 +117,62 @@ const PortfolioSection = () => {
           {selectedId && (
             <>
               <Overlay
-                onClick={() => setSelectedId(null)}
+                onClick={closeModal}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0, transition: { duration: 0.15 } }}
                 transition={{ duration: 0.2, delay: 0.15 }}
               />
 
-              <SelectedCard
-                layoutId={selectedId}
-                // initial={{ maxHeight: 560, width: 700 }}
-                // animate={{maxHeight: 340, }}
-              >
-                <SelectedIcon src={projects[selectedId - 1].img} />
-                <SelectedH2>{projects[selectedId - 1].name}</SelectedH2>
-                <SelectedP>{projects[selectedId - 1].description}</SelectedP>
+              <SelectedCard layoutId={selectedId}>
+                <CarouselWrapper>
+                  <CarouselWindow>
+                    <Carousel
+                      ref={carousel}
+                      // transition={{
+                      //   x: { type: "spring", stiffness: 300, damping: 200 },
+                      // }}
+                      drag="x"
+                      dragConstraints={{ left: 0, right: 0 }}
+                      dragElastic={1}
+                      onDragEnd={(e, { offset, velocity }) => {
+                        const swipe = swipePower(offset.x, velocity.x);
+                        console.log(swipe);
+                        if (
+                          swipe < -swipeConfidenceThreshold &&
+                          carousel.current.style.transform <
+                            "translate3d(-40%, 0px, 0px)"
+                        ) {
+                          swipeControl(1);
+                        } else if (
+                          swipe > swipeConfidenceThreshold &&
+                          carousel.current.style.transform >
+                            "translate3d(40%, 0px, 0px)"
+                        ) {
+                          swipeControl(-1);
+                        }
+                      }}
+                    >
+                      <SelectedImage
+                        src={images[imageIndex === 0 ? 2 : imageIndex - 1]}
+                      />
+                      <SelectedImage src={images[imageIndex]} />
+                      <SelectedImage
+                        src={images[imageIndex === 2 ? 0 : imageIndex + 1]}
+                      />
+                    </Carousel>
+                  </CarouselWindow>
+                </CarouselWrapper>
+                <PrevButton onClick={() => slideControl(-1)}>
+                  <ArrowBackIosRounded />
+                </PrevButton>
+                <NextButton onClick={() => slideControl(1)}>
+                  <ArrowForwardIosRounded />
+                </NextButton>
+                <SelectedTextContent>
+                  <SelectedH2>{projects[selectedId - 1].name}</SelectedH2>
+                  <SelectedP>{projects[selectedId - 1].description}</SelectedP>
+                </SelectedTextContent>
                 <ModalButtonsContainer>
                   <ViewSiteButtonsContainer>
                     {projects[selectedId - 1].name !== "LNB" && (
@@ -122,7 +196,7 @@ const PortfolioSection = () => {
                       </GoToSiteIcon>
                     </ViewSiteButtonWrapper>
                   </ViewSiteButtonsContainer>
-                  <ExitButton onClick={() => setSelectedId(null)}>
+                  <ExitButton onClick={closeModal}>
                     <CloseIcon fontSize="large" />
                   </ExitButton>
                 </ModalButtonsContainer>
