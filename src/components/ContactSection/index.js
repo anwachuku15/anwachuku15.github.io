@@ -37,7 +37,7 @@ const ContactSection = ({
           <ContactRow imgStart={imgStart}>
             <Column1>
               <TextWrapper>
-                <TopLine>{topline}</TopLine>
+                <TopLine>Contact</TopLine>
                 <Heading lightText={lightText}>{heading}</Heading>
                 <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
                 <BtnWrap>
