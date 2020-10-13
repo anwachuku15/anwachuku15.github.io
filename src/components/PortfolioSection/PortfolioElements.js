@@ -94,7 +94,7 @@ export const PortfolioIcon = styled(motion.img)`
   /* height: 160px; */
   /* margin-bottom: 10px; */
   width: 100%;
-  height: 195px;
+  /* height: 195px; */
 `;
 
 export const CarouselWrapper = styled.div`

@@ -1,7 +1,9 @@
 import composemusic from "../../assets/images/svgs/composemusic.svg";
 import playlist from "../../assets/images/svgs/playlist.svg";
 import mediaplayer from "../../assets/images/svgs/mediaplayer.svg";
-// import spotify from "../../assets/images/spotify/";
+import spotify from "../../assets/images/spotify/spotifyclone.png";
+import rapcaviar from "../../assets/images/spotify/rapcaviar.png";
+import rapcaviar2 from "../../assets/images/spotify/rapcaviar2.png";
 
 import sendgift from "../../assets/images/svgs/sendgift.svg";
 import mobileinterface from "../../assets/images/svgs/mobileinterface.svg";
@@ -17,7 +19,7 @@ export const projects = [
     name: "Spotify Clone",
     description:
       "A Spotify clone that allows Spotify Premium users to play music from up to 50 of their most recent playlists.",
-    images: [composemusic, mediaplayer, playlist],
+    images: [rapcaviar, rapcaviar2, spotify],
     url: "https://spotify-clone-ed27e.web.app/",
     github: "https://github.com/anwachuku15/spotify-clone",
   },
