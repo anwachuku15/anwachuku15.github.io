@@ -26,8 +26,8 @@ const Button = ({
       {route && <RouteBtn to={route}>{title}</RouteBtn>}
       {direction && (
         <ScrollBtn
-          onClick={() => (openModal ? openModal : {})}
           lightBg={lightBg}
+          onClick={() => (openModal ? openModal : {})}
           to={scrollTo}
           smooth={true}
           duration={500}
