@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../Button";
 import {
   ContactContainer,
@@ -8,9 +8,11 @@ import {
   Column2,
   TextWrapper,
   TopLine,
-  Heading,
-  Subtitle,
-  BtnWrap,
+  FormWrapper,
+  FormName,
+  FormEmail,
+  FormMessage,
+  // BtnWrap,
   ImgWrap,
   Img,
 } from "./ContactElements";
@@ -30,6 +32,21 @@ const ContactSection = ({
   primary,
   buttonLabel,
 }) => {
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [message, setMessage] = useState();
+
+  const formInfo = {
+    name: name,
+    email: email,
+    message: message,
+  };
+  const submit = (name, email, message) => {
+    console.log(name, email);
+    // console.log(email);
+    console.log(message);
+    console.log("submitted");
+  };
   return (
     <>
       <ContactContainer lightBg={lightBg} id="contact">
@@ -38,18 +55,38 @@ const ContactSection = ({
             <Column1>
               <TextWrapper>
                 <TopLine>Contact</TopLine>
-                <Heading lightText={lightText}>{heading}</Heading>
-                <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
-                <BtnWrap>
+                <FormWrapper>
+                  <FormName
+                    placeholder="Name"
+                    type="text"
+                    name="name"
+                    // value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                  <FormEmail
+                    placeholder="Email"
+                    type="email"
+                    name="email"
+                    // value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <FormMessage
+                    placeholder="Message"
+                    name="message"
+                    // value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                  />
+                  {/* <BtnWrap> */}
                   <Button
-                    title={buttonLabel}
-                    direction="down"
-                    scrollTo="portfolio"
+                    title={"Submit"}
+                    formInfo={formInfo}
+                    submit={submit}
                     lightBg={lightBg}
                     primary={primary}
                     dark={dark}
                   />
-                </BtnWrap>
+                  {/* </BtnWrap> */}
+                </FormWrapper>
               </TextWrapper>
             </Column1>
             <Column2>
