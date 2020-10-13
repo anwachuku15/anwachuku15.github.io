@@ -1,8 +1,10 @@
 import composemusic from "../../assets/images/svgs/composemusic.svg";
+import playlist from "../../assets/images/svgs/playlist.svg";
+import mediaplayer from "../../assets/images/svgs/mediaplayer.svg";
+// import spotify from "../../assets/images/spotify/";
+
 import sendgift from "../../assets/images/svgs/sendgift.svg";
 import mobileinterface from "../../assets/images/svgs/mobileinterface.svg";
-import mediaplayer from "../../assets/images/svgs/mediaplayer.svg";
-import playlist from "../../assets/images/svgs/playlist.svg";
 import deliveries from "../../assets/images/svgs/deliveries.svg";
 import orderdelivered from "../../assets/images/svgs/orderdelivered.svg";
 import mobiledevelopment from "../../assets/images/svgs/mobiledevelopment.svg";
