@@ -30,7 +30,7 @@ const Navbar = ({ toggleMenu }) => {
   let path = window.location.pathname;
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
-    console.log(path);
+    // console.log(path);
   }, [path]);
 
   const toggleHome = () => {
