@@ -47,7 +47,7 @@ const Project = () => {
         <h1 style={{ fontSize: 48, color: "#d23f3f" }}>404</h1>
         <p style={{ fontSize: 24, color: "#101522" }}>Page Not Found</p>
         <img
-          src={require("../../assets/images/lost.svg")}
+          src={require("../../assets/images/svgs/lost.svg")}
           alt="lost"
           style={{ objectFit: "contain", width: 400 }}
         />

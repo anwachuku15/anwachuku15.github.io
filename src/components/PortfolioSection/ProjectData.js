@@ -1,12 +1,12 @@
-import composemusic from "../../assets/images/composemusic.svg";
-import sendgift from "../../assets/images/sendgift.svg";
-import mobileinterface from "../../assets/images/mobileinterface.svg";
-import mediaplayer from "../../assets/images/mediaplayer.svg";
-import playlist from "../../assets/images/playlist.svg";
-import deliveries from "../../assets/images/deliveries.svg";
-import orderdelivered from "../../assets/images/orderdelivered.svg";
-import mobiledevelopment from "../../assets/images/mobiledevelopment.svg";
-import mobileapp from "../../assets/images/mobileapp.svg";
+import composemusic from "../../assets/images/svgs/composemusic.svg";
+import sendgift from "../../assets/images/svgs/sendgift.svg";
+import mobileinterface from "../../assets/images/svgs/mobileinterface.svg";
+import mediaplayer from "../../assets/images/svgs/mediaplayer.svg";
+import playlist from "../../assets/images/svgs/playlist.svg";
+import deliveries from "../../assets/images/svgs/deliveries.svg";
+import orderdelivered from "../../assets/images/svgs/orderdelivered.svg";
+import mobiledevelopment from "../../assets/images/svgs/mobiledevelopment.svg";
+import mobileapp from "../../assets/images/svgs/mobileapp.svg";
 
 export const projects = [
   {
