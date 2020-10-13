@@ -51,7 +51,7 @@ export const RouteBtn = styled(Link)`
   }
 `;
 
-export const ModalBtn = styled.p`
+export const Btn = styled.p`
   display: flex;
   color: ${({ lightBg }) => (lightBg ? "#322f4e" : "white")};
   text-decoration: none;
