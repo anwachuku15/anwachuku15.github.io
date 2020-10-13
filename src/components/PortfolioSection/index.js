@@ -66,30 +66,30 @@ const PortfolioSection = () => {
     }, 700);
   };
 
-  const swipeControl = (n) => {
-    carousel.current.classList.add(n < 0 ? "swipePrev" : "swipeNext");
-    setTimeout(() => {
-      if (imageIndex === 2 && n === 1) {
-        setImageIndex(0);
-      } else if (imageIndex === 0 && n === -1) {
-        setImageIndex(2);
-      } else {
-        setImageIndex(imageIndex + n);
-      }
-      carousel.current.classList.remove(n < 0 ? "swipePrev" : "swipeNext");
-    }, 200);
-  };
-
   const closeModal = () => {
     setSelectedId(null);
     setImages(null);
     setImageIndex(0);
   };
 
-  const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset, velocity) => {
-    return Math.abs(offset) * velocity;
-  };
+  // const swipeControl = (n) => {
+  //   carousel.current.classList.add(n < 0 ? "swipePrev" : "swipeNext");
+  //   setTimeout(() => {
+  //     if (imageIndex === 2 && n === 1) {
+  //       setImageIndex(0);
+  //     } else if (imageIndex === 0 && n === -1) {
+  //       setImageIndex(2);
+  //     } else {
+  //       setImageIndex(imageIndex + n);
+  //     }
+  //     carousel.current.classList.remove(n < 0 ? "swipePrev" : "swipeNext");
+  //   }, 200);
+  // };
+
+  // const swipeConfidenceThreshold = 10000;
+  // const swipePower = (offset, velocity) => {
+  //   return Math.abs(offset) * velocity;
+  // };
   // snap points
   return (
     <PortfolioContainer id="portfolio">
