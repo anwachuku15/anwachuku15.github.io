@@ -1,6 +1,6 @@
-import composemusic from "../../assets/images/svgs/composemusic.svg";
-import playlist from "../../assets/images/svgs/playlist.svg";
-import mediaplayer from "../../assets/images/svgs/mediaplayer.svg";
+// import composemusic from "../../assets/images/svgs/composemusic.svg";
+// import playlist from "../../assets/images/svgs/playlist.svg";
+// import mediaplayer from "../../assets/images/svgs/mediaplayer.svg";
 import spotify from "../../assets/images/spotify/spotifyclone.png";
 import rapcaviar from "../../assets/images/spotify/rapcaviar.png";
 import rapcaviar2 from "../../assets/images/spotify/rapcaviar2.png";
