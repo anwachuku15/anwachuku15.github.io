@@ -96,10 +96,11 @@ const PortfolioSection = () => {
       <PortfolioH1>Projects</PortfolioH1>
       <AnimateSharedLayout type="crossfade">
         <PortfolioWrapper>
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <PortfolioCard
               layoutId={project.id}
               onClick={() => selectProject(project.id)}
+              key={index}
             >
               <PortfolioIcon src={project.images[0]} />
               <PortfolioH2>{project.name}</PortfolioH2>
