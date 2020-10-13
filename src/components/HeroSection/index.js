@@ -4,6 +4,7 @@ import {
   HeroBg,
   VideoBg,
   HeroContent,
+  HeroMainText,
   HeroH1,
 } from "./HeroElements";
 import Button from "../Button";
@@ -16,8 +17,8 @@ const HeroSection = () => {
         <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
       </HeroBg>
       <HeroContent>
-        <HeroH1>
-          Hello, I'm{" "}
+        <HeroMainText>
+          <HeroH1>Hello, I'm </HeroH1>
           <HeroH1
             style={{
               color: "rgb(225 21 21)",
@@ -25,12 +26,13 @@ const HeroSection = () => {
               padding: "1px 5px",
               borderRadius: 10,
               display: "inline-block",
+              marginLeft: 10,
             }}
           >
             Andrew Nwachuku
           </HeroH1>
-          .
-        </HeroH1>
+          <HeroH1>.</HeroH1>
+        </HeroMainText>
         <HeroH1>I'm a full-stack web developer.</HeroH1>
         <Button
           title="See my work!"
