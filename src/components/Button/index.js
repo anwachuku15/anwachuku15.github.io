@@ -1,22 +1,18 @@
 import React from "react";
-import {
-  BtnWrapper,
-  ScrollBtn,
-  RouteBtn,
-  ModalBtn,
-  Arrow,
-} from "./ButtonElements";
+import { BtnWrapper, ScrollBtn, RouteBtn, Btn, Arrow } from "./ButtonElements";
 import {
   KeyboardArrowDownRounded,
   KeyboardArrowUpRounded,
   ArrowForwardIosRounded,
+  SendOutlined,
+  InfoOutlined,
 } from "@material-ui/icons";
-
-import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 
 const Button = ({
   title,
   openModal,
+  submit,
+  formInfo,
   direction,
   scrollTo,
   route,
@@ -47,25 +43,41 @@ const Button = ({
       )}
       {openModal && (
         <>
-          <ModalBtn
+          <Btn
             onClick={() => (openModal ? openModal : {})}
             lightBg={lightBg}
-            to={scrollTo}
-            smooth={true}
-            duration={500}
-            spy={true}
-            exact="true"
-            offset={-80}
             primary={primary ? 1 : 0}
             dark={dark ? 1 : 0}
             dark2={dark2 ? 1 : 0}
           >
             {title}
-          </ModalBtn>
+          </Btn>
           <Arrow>
-            <InfoOutlinedIcon fontSize="small" />
+            <InfoOutlined fontSize="small" />
           </Arrow>
         </>
+      )}
+      {submit && (
+        <div
+          style={{ display: "flex" }}
+          onClick={() =>
+            submit
+              ? submit(formInfo.name, formInfo.email, formInfo.message)
+              : {}
+          }
+        >
+          <Btn
+            lightBg={lightBg}
+            primary={primary ? 1 : 0}
+            dark={dark ? 1 : 0}
+            dark2={dark2 ? 1 : 0}
+          >
+            {title}
+          </Btn>
+          <Arrow>
+            <SendOutlined fontSize="small" />
+          </Arrow>
+        </div>
       )}
 
       {direction && (
