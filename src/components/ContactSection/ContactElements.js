@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const lightRed = "#ffefef";
 // const black = "#060101";
-const navy = "#322f4e";
-const lightBlack = "#181625";
+// const navy = "#322f4e";
+// const lightBlack = "#181625";
 
 export const ContactContainer = styled.div`
   color: ${({ lightBg }) => (lightBg ? "#000" : "#fff")};
