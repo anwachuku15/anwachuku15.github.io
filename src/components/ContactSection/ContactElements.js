@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const lightRed = "#ffefef";
@@ -39,12 +40,12 @@ export const ContactRow = styled.div`
   }
 `;
 
-export const Column1 = styled.div`
+export const Column1 = styled(motion.div)`
   margin-bottom: 15px;
   padding: 0 15px;
   grid-area: col1;
 `;
-export const Column2 = styled.div`
+export const Column2 = styled(motion.div)`
   margin-bottom: 15px;
   padding: 0 15px;
   grid-area: col2;
@@ -66,28 +67,63 @@ export const TopLine = styled.p`
   margin-bottom: 16px;
 `;
 
-export const Heading = styled.h1`
-  margin-bottom: 24px;
-  font-size: 48px;
-  line-height: 1.1;
-  font-weight: 600;
-  color: ${({ lightText }) => (lightText ? "#fff" : navy)};
-  @media screen and (max-width: 480px) {
-    font-size: 32px;
+export const FormWrapper = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+`;
+
+export const FormName = styled(motion.input)`
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  background: #322f4e;
+  border: 0;
+  border-radius: 10px;
+  outline: none;
+  color: white;
+  font-size: 12pt;
+
+  ::placeholder {
+    color: #cbc0c0;
   }
 `;
 
-export const Subtitle = styled.p`
-  max-width: 440px;
-  margin-bottom: 35px;
-  font-size: 18px;
-  line-height: 24px;
-  color: ${({ lightTextDesc }) => (lightTextDesc ? "#fff" : lightBlack)};
+export const FormEmail = styled(motion.input)`
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  background: #322f4e;
+  border: 0;
+  border-radius: 10px;
+  outline: none;
+  color: white;
+  font-size: 12pt;
+
+  ::placeholder {
+    color: #cbc0c0;
+  }
+`;
+
+export const FormMessage = styled(motion.textarea)`
+  margin-bottom: 10px;
+  padding: 10px 16px;
+  background: #322f4e;
+  border: 0;
+  border-radius: 10px;
+  outline: none;
+  color: white;
+  font-size: 12pt;
+  min-height: 200px;
+  resize: none;
+
+  ::placeholder {
+    color: #cbc0c0;
+  }
 `;
 
 export const BtnWrap = styled.div`
-  display: flex;
-  justify-content: flex-start;
+  /* display: flex; */
+  /* justify-content: flex-end; */
 `;
 
 export const ImgWrap = styled.div`
