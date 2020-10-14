@@ -18,7 +18,7 @@ export const projects = [
     linkTo: "/spotify-clone",
     name: "Spotify Clone",
     description:
-      "A Spotify clone that allows Spotify Premium users to play music from up to 50 of their most recent playlists.",
+      "A Spotify clone that allows Spotify Premium users to play music from up to 50 of their most recent playlists. Utilizing Spotify's API to access songs and playlists, User Authentication, and exercising component best practices, and ",
     images: [rapcaviar, rapcaviar2, spotify],
     url: "https://spotify-clone-ed27e.web.app/",
     github: "https://github.com/anwachuku15/spotify-clone",
@@ -28,7 +28,7 @@ export const projects = [
     linkTo: "/amazon-clone",
     name: "Amazon Clone",
     description:
-      "A full stack Amazon clone with Stripe integration and Firebase back end.",
+      "A full stack Amazon clone with full e-commerce functionality, Stripe payment processsing, complex data management with React Context API, and clean UI/UX",
     images: [sendgift, deliveries, orderdelivered],
     url: "https://github.com/anwachuku15/amazon-clone",
     github: "https://github.com/anwachuku15/amazon-clone",
