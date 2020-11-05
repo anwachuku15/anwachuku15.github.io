@@ -71,12 +71,15 @@ export const SideBtnWrap = styled.div`
 `;
 
 export const SidebarBtnLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50px;
   background: black;
   white-space: nowrap;
-  padding: 16px 64px;
+  padding: 16px 32px;
   color: white;
-  font-size: 16px;
+  font-size: 1.3rem;
   outline: none;
   border: none;
   cursor: pointer;
