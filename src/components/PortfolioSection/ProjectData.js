@@ -30,7 +30,7 @@ export const projects = [
     name: "Amazon Clone",
     stack: "React / Node / Express / Firebase Hosting",
     description:
-      "A full stack Amazon clone with full e-commerce functionality, Stripe payment processsing, complex data management with React Context API, and clean UI/UX",
+      "A full stack Amazon clone with full e-commerce functionality, Stripe payment processsing, and user authentication.",
     images: [amazon, cart, checkout],
     url: "https://clone-7b53f.web.app/",
     github: "https://github.com/anwachuku15/amazon-clone",
