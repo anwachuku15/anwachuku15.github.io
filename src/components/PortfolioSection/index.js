@@ -128,32 +128,7 @@ const PortfolioSection = () => {
               <SelectedCard layoutId={selectedId}>
                 <CarouselWrapper>
                   <CarouselWindow>
-                    <Carousel
-                      ref={carousel}
-                      // transition={{
-                      //   x: { type: "spring", stiffness: 300, damping: 200 },
-                      // }}
-                      // drag="x"
-                      // dragConstraints={{ left: 0, right: 0 }}
-                      // dragElastic={1}
-                      // onDragEnd={(e, { offset, velocity }) => {
-                      //   const swipe = swipePower(offset.x, velocity.x);
-                      //   console.log(swipe);
-                      //   if (
-                      //     swipe < -swipeConfidenceThreshold &&
-                      //     carousel.current.style.transform <
-                      //       "translate3d(-40%, 0px, 0px)"
-                      //   ) {
-                      //     swipeControl(1);
-                      //   } else if (
-                      //     swipe > swipeConfidenceThreshold &&
-                      //     carousel.current.style.transform >
-                      //       "translate3d(40%, 0px, 0px)"
-                      //   ) {
-                      //     swipeControl(-1);
-                      //   }
-                      // }}
-                    >
+                    <Carousel ref={carousel}>
                       <SelectedImage
                         src={images[imageIndex === 0 ? 2 : imageIndex - 1]}
                       />
@@ -171,7 +146,10 @@ const PortfolioSection = () => {
                   <ArrowForwardIosRounded />
                 </NextButton>
                 <SelectedTextContent>
-                  <SelectedH2>{projects[selectedId - 1].name}</SelectedH2>
+                  <SelectedH2>
+                    {projects[selectedId - 1].name} (
+                    {projects[selectedId - 1].stack})
+                  </SelectedH2>
                   <SelectedP>{projects[selectedId - 1].description}</SelectedP>
                 </SelectedTextContent>
                 <ModalButtonsContainer>

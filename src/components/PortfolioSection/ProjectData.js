@@ -8,7 +8,7 @@ import checkout from "../../assets/images/amazon/checkout.png";
 
 import facebook from "../../assets/images/facebook/facebook.png";
 
-import mobileinterface from "../../assets/images/svgs/mobileinterface.svg";
+// import mobileinterface from "../../assets/images/svgs/mobileinterface.svg";
 import mobiledevelopment from "../../assets/images/svgs/mobiledevelopment.svg";
 import mobileapp from "../../assets/images/svgs/mobileapp.svg";
 
@@ -17,8 +17,9 @@ export const projects = [
     id: 1,
     linkTo: "/spotify-clone",
     name: "Spotify Clone",
+    stack: "React / Firebase Hosting",
     description:
-      "A Spotify clone that allows Spotify Premium users to play music from up to 50 of their most recent playlists. Utilizing Spotify's API to access songs and playlists, User Authentication, and exercising component best practices, and ",
+      "A Spotify clone that allows existing Spotify users to play music from up to 50 of their most recent playlists. Built with React and deployed through Firebase Hosting.",
     images: [rapcaviar, rapcaviar2, spotify],
     url: "https://spotify-clone-ed27e.web.app/",
     github: "https://github.com/anwachuku15/spotify-clone",
@@ -27,6 +28,7 @@ export const projects = [
     id: 2,
     linkTo: "/amazon-clone",
     name: "Amazon Clone",
+    stack: "React / Node / Express / Firebase Hosting",
     description:
       "A full stack Amazon clone with full e-commerce functionality, Stripe payment processsing, complex data management with React Context API, and clean UI/UX",
     images: [amazon, cart, checkout],
@@ -37,6 +39,7 @@ export const projects = [
     id: 3,
     linkTo: "/facebook-clone",
     name: "Facebook Clone",
+    stack: "MERN / Firebase Hosting / Heroku",
     description:
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur cupidatat norum.",
     images: [facebook, mobiledevelopment, mobileapp],
