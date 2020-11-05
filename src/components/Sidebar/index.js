@@ -9,6 +9,7 @@ import {
   SideBtnWrap,
   SidebarBtnLink,
 } from "./SidebarElements";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 const Sidebar = ({ isOpen, toggleMenu }) => {
   return (
@@ -25,7 +26,7 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
         </SidebarMenu>
         <SideBtnWrap>
           <SidebarBtnLink href="https://github.com/anwachuku15" target="_blank">
-            Github
+            Github <GitHubIcon fontSize="medium" style={{ marginLeft: 10 }} />
           </SidebarBtnLink>
         </SideBtnWrap>
       </SidebarWrapper>
