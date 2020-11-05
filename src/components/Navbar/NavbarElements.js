@@ -108,6 +108,8 @@ export const NavBtn = styled.nav`
 `;
 
 export const NavBtnLink = styled.a`
+  display: flex;
+  align-items: center;
   border-radius: 50px;
   background: #fa3737;
   white-space: nowrap;

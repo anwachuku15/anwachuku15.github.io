@@ -12,6 +12,7 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./NavbarElements";
+import GitHubIcon from "@material-ui/icons/GitHub";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
 
@@ -102,7 +103,7 @@ const Navbar = ({ toggleMenu }) => {
 
           <NavBtn>
             <NavBtnLink href="https://github.com/anwachuku15" target="_blank">
-              Github
+              Github <GitHubIcon fontSize="small" style={{ marginLeft: 5 }} />
             </NavBtnLink>
           </NavBtn>
         </NavContainer>
