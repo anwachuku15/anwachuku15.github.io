@@ -8,9 +8,13 @@ import checkout from "../../assets/images/amazon/checkout.png";
 
 import facebook from "../../assets/images/facebook/facebook.png";
 
-// import mobileinterface from "../../assets/images/svgs/mobileinterface.svg";
-import mobiledevelopment from "../../assets/images/svgs/mobiledevelopment.svg";
-import mobileapp from "../../assets/images/svgs/mobileapp.svg";
+import profile from "../../assets/images/collabo/profile.png";
+import post from "../../assets/images/collabo/post.png";
+import signup from "../../assets/images/collabo/signup.png";
+
+import carousel from "../../assets/images/landingpage/carousel.png";
+import services from "../../assets/images/landingpage/services.png";
+import contact from "../../assets/images/landingpage/contact.png";
 
 export const projects = [
   {
@@ -28,7 +32,7 @@ export const projects = [
     id: 2,
     linkTo: "/amazon-clone",
     name: "Amazon Clone",
-    stack: "React / Node / Express / Firebase Hosting",
+    stack: "React / Node / Express / Firebase Cloud Functions & Hosting",
     description:
       "A full stack Amazon clone with full e-commerce functionality, Stripe payment processsing, and user authentication.",
     images: [amazon, cart, checkout],
@@ -41,19 +45,30 @@ export const projects = [
     name: "Facebook Clone",
     stack: "MERN / Firebase Hosting / Heroku",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur cupidatat norum.",
-    images: [facebook, mobiledevelopment, mobileapp],
+      "Facebook home page clone allowing users to create posts. Features Google user authentication.",
+    images: [facebook, facebook, facebook],
     url: "https://facebookclone-mern-c56cd.firebaseapp.com/",
     github: "https://github.com/anwachuku15/LNB",
   },
-  // {
-  //   id: 4,
-  //   linkTo: "/lnb-mobile-app",
-  //   name: "LNB",
-  //   description:
-  //     "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur cupidatat norum.",
-  //   images: [mobileinterface, mobiledevelopment, mobileapp],
-  //   url: "https://github.com/anwachuku15/LNB",
-  //   github: "https://github.com/anwachuku15/LNB",
-  // },
+  {
+    id: 4,
+    linkTo: "/collabo",
+    name: "Collabo",
+    stack: "React / Node / Express / Firebase Cloud Functions & Hosting",
+    description:
+      "Twitter-esque app allowing authenticated users to create posts and receive notifications each time a post is liked or commented by other users.",
+    images: [profile, post, signup],
+    url: "https://social-3be8a.firebaseapp.com/",
+    github: "https://github.com/anwachuku15/social-client",
+  },
+  {
+    id: 5,
+    linkTo: "/landingpage",
+    name: "Business Landing Page Clone",
+    stack: "React / Hosting",
+    description: "Business landing page clone with responsive web design.",
+    images: [carousel, services, contact],
+    url: "https://officium-f28bd.web.app/",
+    github: "https://github.com/anwachuku15/officium",
+  },
 ];
