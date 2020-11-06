@@ -51,6 +51,22 @@ export const RouteBtn = styled(Link)`
   }
 `;
 
+export const SubmitBtn = styled.button`
+  display: flex;
+  color: ${({ lightBg }) => (lightBg ? "#322f4e" : "white")};
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 150ms ease;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+
+  ${BtnWrapper}:hover & {
+    color: white;
+  }
+`;
+
 export const Btn = styled.p`
   display: flex;
   color: ${({ lightBg }) => (lightBg ? "#322f4e" : "white")};

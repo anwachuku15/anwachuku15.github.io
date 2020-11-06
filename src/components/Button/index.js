@@ -1,5 +1,12 @@
 import React from "react";
-import { BtnWrapper, ScrollBtn, RouteBtn, Btn, Arrow } from "./ButtonElements";
+import {
+  BtnWrapper,
+  ScrollBtn,
+  RouteBtn,
+  SubmitBtn,
+  Btn,
+  Arrow,
+} from "./ButtonElements";
 import {
   KeyboardArrowDownRounded,
   KeyboardArrowUpRounded,
@@ -71,26 +78,12 @@ const Button = ({
         </>
       )}
       {submit && (
-        <div
-          style={{ display: "flex" }}
-          onClick={() =>
-            submit
-              ? submit(formInfo.name, formInfo.email, formInfo.message)
-              : {}
-          }
-        >
-          <Btn
-            lightBg={lightBg}
-            primary={primary ? 1 : 0}
-            dark={dark ? 1 : 0}
-            dark2={dark2 ? 1 : 0}
-          >
-            {title}
-          </Btn>
+        <SubmitBtn lightBg={lightBg} onClick={submit}>
+          {title}
           <Arrow>
             <SendOutlined fontSize="small" />
           </Arrow>
-        </div>
+        </SubmitBtn>
       )}
     </BtnWrapper>
   );
