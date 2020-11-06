@@ -21,6 +21,7 @@ import {
   SelectedCard,
   CarouselWrapper,
   CarouselWindow,
+  // Widget,
   Carousel,
   SelectedImage,
   SelectedTextContent,
@@ -127,6 +128,7 @@ const PortfolioSection = () => {
 
               <SelectedCard layoutId={selectedId}>
                 <CarouselWrapper>
+                  {/* <Widget src={projects[selectedId - 1].url} /> */}
                   <CarouselWindow>
                     <Carousel ref={carousel}>
                       <SelectedImage
@@ -146,10 +148,8 @@ const PortfolioSection = () => {
                   <ArrowForwardIosRounded />
                 </NextButton>
                 <SelectedTextContent>
-                  <SelectedH2>
-                    {projects[selectedId - 1].name} (
-                    {projects[selectedId - 1].stack})
-                  </SelectedH2>
+                  <SelectedH2>{projects[selectedId - 1].name}</SelectedH2>
+                  <h3>({projects[selectedId - 1].stack})</h3>
                   <SelectedP>{projects[selectedId - 1].description}</SelectedP>
                 </SelectedTextContent>
                 <ModalButtonsContainer>
