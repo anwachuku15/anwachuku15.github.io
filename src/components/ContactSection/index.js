@@ -16,6 +16,8 @@ import {
   ImgWrap,
   Img,
 } from "./ContactElements";
+import { init, send, sendForm } from "emailjs-com";
+init("user_9dp5UoOqeUcTQvcaoAnGT");
 
 const ContactSection = ({
   lightBg,
@@ -32,20 +34,30 @@ const ContactSection = ({
   primary,
   buttonLabel,
 }) => {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [message, setMessage] = useState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const formInfo = {
-    name: name,
-    email: email,
+    from_name: name,
+    to_name: "Andrew",
     message: message,
+    reply_to: email,
   };
-  const submit = (name, email, message) => {
-    console.log(name, email);
-    // console.log(email);
-    console.log(message);
-    console.log("submitted");
+
+  const sendFeedback = () => {
+    send("service_p7znamw", "contact_form", formInfo);
+  };
+  const submit = (e) => {
+    e.preventDefault();
+    if (name.trim() !== "" && email.trim() !== "" && message.trim() !== "") {
+      alert(`name: ${name}, email: ${email}, message: ${message}`);
+      setName("");
+      setEmail("");
+      setMessage("");
+    } else {
+      alert("Form invalid");
+    }
   };
   return (
     <>
@@ -55,37 +67,40 @@ const ContactSection = ({
             <Column1>
               <TextWrapper>
                 <TopLine>Contact</TopLine>
-                <FormWrapper>
+                <FormWrapper id="contact_form">
                   <FormName
                     placeholder="Name"
                     type="text"
                     name="name"
-                    // value={name}
+                    value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
                   <FormEmail
                     placeholder="Email"
                     type="email"
                     name="email"
-                    // value={email}
+                    value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                   <FormMessage
                     placeholder="Message"
                     name="message"
-                    // value={message}
+                    value={message}
                     onChange={(e) => setMessage(e.target.value)}
                   />
-                  {/* <BtnWrap> */}
+                  <br />
+                  <div
+                    class="g-recaptcha"
+                    data-sitekey="6LfvDuAZAAAAAHofENLOimCHMHOefdZ-5p4UPBOq"
+                  ></div>
                   <Button
                     title={"Submit"}
-                    formInfo={formInfo}
+                    // formInfo={formInfo}
                     submit={submit}
                     lightBg={lightBg}
                     primary={primary}
                     dark={dark}
                   />
-                  {/* </BtnWrap> */}
                 </FormWrapper>
               </TextWrapper>
             </Column1>
