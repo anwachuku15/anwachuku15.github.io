@@ -13,15 +13,24 @@ export const BtnWrapper = styled.div`
   margin-top: 20px;
   padding: 6px 15px 8px 15px;
   border-radius: 50px;
-  border: ${({ lightBg }) =>
-    lightBg ? `${"2px solid #322f4e"}` : `${"2px solid white"}`};
-  background-color: transparent;
+  border: ${({ lightBg, disabled }) => {
+    if (disabled) {
+      return `${"2px solid lightgray"}`;
+    } else if (lightBg) {
+      return `${"2px solid #322f4e"}`;
+    } else {
+      return `${"2px solid white"}`;
+    }
+  }};
+  background-color: ${({ disabled }) =>
+    disabled ? `${"lightgray"}` : `${"transparent"}`};
   transition: background-color 150ms, border 150ms, opacity 1s ease;
   position: relative;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
 
   &:hover {
-    background-color: rgba(210, 63, 63, 1);
+    background-color: ${({ disabled }) =>
+      disabled ? `${"lightgray"}` : `${"rgba(210, 63, 63, 1)"}`};
     border: 2px solid transparent;
     align-items: center;
   }
@@ -53,14 +62,23 @@ export const RouteBtn = styled(Link)`
 
 export const SubmitBtn = styled.button`
   display: flex;
-  color: ${({ lightBg }) => (lightBg ? "#322f4e" : "white")};
+  color: ${({ lightBg, disabled }) => {
+    if (disabled) {
+      return "white";
+    } else if (lightBg) {
+      return "#322f4e";
+    } else {
+      return "white";
+    }
+  }};
+  /* color: ${({ lightBg }) => (lightBg ? "#322f4e" : "white")}; */
   text-decoration: none;
   font-size: 18px;
   transition: color 150ms ease;
   border: none;
   background-color: transparent;
   outline: none;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
 
   ${BtnWrapper}:hover & {
     color: white;

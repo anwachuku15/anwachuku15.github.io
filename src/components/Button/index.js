@@ -19,7 +19,7 @@ const Button = ({
   title,
   openModal,
   submit,
-  formInfo,
+  isDisabled,
   direction,
   scrollTo,
   route,
@@ -29,7 +29,7 @@ const Button = ({
   dark2,
 }) => {
   return (
-    <BtnWrapper lightBg={lightBg}>
+    <BtnWrapper lightBg={lightBg} disabled={isDisabled}>
       {route && <RouteBtn to={route}>{title}</RouteBtn>}
       {direction && (
         <>
@@ -78,11 +78,13 @@ const Button = ({
         </>
       )}
       {submit && (
-        <SubmitBtn lightBg={lightBg} onClick={submit}>
+        <SubmitBtn lightBg={lightBg} onClick={submit} disabled={isDisabled}>
           {title}
-          <Arrow>
-            <SendOutlined fontSize="small" />
-          </Arrow>
+          {!isDisabled && (
+            <Arrow>
+              <SendOutlined fontSize="small" />
+            </Arrow>
+          )}
         </SubmitBtn>
       )}
     </BtnWrapper>
