@@ -67,7 +67,7 @@ export const TopLine = styled.p`
   margin-bottom: 16px;
 `;
 
-export const FormWrapper = styled(motion.div)`
+export const FormWrapper = styled(motion.form)`
   display: flex;
   flex-direction: column;
   width: 100%;
