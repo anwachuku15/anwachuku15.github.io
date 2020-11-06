@@ -4,12 +4,15 @@ import {
   AboutContainer,
   AboutWrapper,
   AboutRow,
+  AboutH1,
   Column1,
   Column2,
   TextWrapper,
   TopLine,
   Heading,
   Subtitle,
+  ContactLink,
+  ContactP,
   BtnWrap,
   ImgWrap,
   Img,
@@ -33,13 +36,38 @@ const AboutSection = ({
   return (
     <>
       <AboutContainer lightBg={lightBg} id="about">
+        <AboutH1>About</AboutH1>
         <AboutWrapper>
           <AboutRow imgStart={imgStart}>
             <Column1>
               <TextWrapper>
                 <TopLine>{topline}</TopLine>
                 <Heading lightText={lightText}>{heading}</Heading>
-                <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
+                <Subtitle lightTextDesc={lightTextDesc}>
+                  I build front-end and full-stack web/mobile applications. I am
+                  proficient in the{" "}
+                  <strong style={{ color: "#43853d" }}>MERN</strong> stack
+                  (MongoDB, Express, React, and Node) as well as{" "}
+                  <strong style={{ color: "#51be95" }}>
+                    Python Django web framework
+                  </strong>
+                  . I also create cross-platform mobile applications with{" "}
+                  <strong style={{ color: "#61dafb" }}>React Native</strong>.
+                  <br />
+                  <br />
+                  <ContactLink
+                    lightBg={lightBg}
+                    to="contact"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                  >
+                    <ContactP>Let's work together.</ContactP>
+                  </ContactLink>
+                </Subtitle>
+
                 <BtnWrap>
                   <Button
                     title={buttonLabel}
