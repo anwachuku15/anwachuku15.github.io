@@ -12,11 +12,10 @@ import {
   FormName,
   FormEmail,
   FormMessage,
-  // BtnWrap,
   ImgWrap,
   Img,
 } from "./ContactElements";
-import { init, send, sendForm } from "emailjs-com";
+import { init, send } from "emailjs-com";
 init("user_9dp5UoOqeUcTQvcaoAnGT");
 
 const ContactSection = ({
@@ -40,21 +39,21 @@ const ContactSection = ({
 
   const formInfo = {
     from_name: name,
-    to_name: "Andrew",
     message: message,
     reply_to: email,
   };
 
-  const sendFeedback = () => {
-    send("service_p7znamw", "contact_form", formInfo);
-  };
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     if (name.trim() !== "" && email.trim() !== "" && message.trim() !== "") {
-      alert(`name: ${name}, email: ${email}, message: ${message}`);
-      setName("");
-      setEmail("");
-      setMessage("");
+      send("service_p7znamw", "contact_form", formInfo)
+        .then((res) => {
+          alert(`name: ${name}, email: ${email}, message: ${message}`);
+          setName("");
+          setEmail("");
+          setMessage("");
+        })
+        .catch((err) => console.log(err));
     } else {
       alert("Form invalid");
     }
