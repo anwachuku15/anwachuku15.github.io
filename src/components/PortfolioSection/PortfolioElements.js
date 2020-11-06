@@ -5,11 +5,11 @@ export const PortfolioContainer = styled(motion.div)`
   /* max-height: 860px; */
   position: relative;
   height: auto;
-  min-height: 860px;
+  min-height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-top: 100px;
+  padding-top: 64px;
   padding-bottom: 30px;
   align-items: center;
   background: #2e1c1c;
@@ -52,7 +52,8 @@ export const PortfolioCard = styled(motion.div)`
   justify-content: flex-start;
   align-items: center;
   border-radius: 10px;
-  max-height: 340px;
+  /* max-height: 340px; */
+  height: fit-content;
   padding: 30px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -117,6 +118,12 @@ export const CarouselWindow = styled.div`
   position: relative;
   overflow: hidden;
   /* display: block; */
+`;
+
+export const Widget = styled(motion.iframe)`
+  width: 100%;
+  height: 100%;
+  border: none;
 `;
 
 export const Carousel = styled(motion.div)`
