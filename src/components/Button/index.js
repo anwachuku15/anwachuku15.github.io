@@ -25,21 +25,34 @@ const Button = ({
     <BtnWrapper lightBg={lightBg}>
       {route && <RouteBtn to={route}>{title}</RouteBtn>}
       {direction && (
-        <ScrollBtn
-          lightBg={lightBg}
-          onClick={() => (openModal ? openModal : {})}
-          to={scrollTo}
-          smooth={true}
-          duration={500}
-          spy={true}
-          exact="true"
-          offset={-80}
-          primary={primary ? 1 : 0}
-          dark={dark ? 1 : 0}
-          dark2={dark2 ? 1 : 0}
-        >
-          {title}
-        </ScrollBtn>
+        <>
+          <ScrollBtn
+            lightBg={lightBg}
+            onClick={() => (openModal ? openModal : {})}
+            to={scrollTo}
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact="true"
+            offset={-80}
+            primary={primary ? 1 : 0}
+            dark={dark ? 1 : 0}
+            dark2={dark2 ? 1 : 0}
+          >
+            {title}
+            <Arrow>
+              {direction === "down" && (
+                <KeyboardArrowDownRounded fontSize="small" />
+              )}
+              {direction === "up" && (
+                <KeyboardArrowUpRounded fontSize="small" />
+              )}
+              {direction === "forward" && (
+                <ArrowForwardIosRounded fontSize="small" />
+              )}
+            </Arrow>
+          </ScrollBtn>
+        </>
       )}
       {openModal && (
         <>
@@ -78,18 +91,6 @@ const Button = ({
             <SendOutlined fontSize="small" />
           </Arrow>
         </div>
-      )}
-
-      {direction && (
-        <Arrow>
-          {direction === "down" && (
-            <KeyboardArrowDownRounded fontSize="small" />
-          )}
-          {direction === "up" && <KeyboardArrowUpRounded fontSize="small" />}
-          {direction === "forward" && (
-            <ArrowForwardIosRounded fontSize="small" />
-          )}
-        </Arrow>
       )}
     </BtnWrapper>
   );
