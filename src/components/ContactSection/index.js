@@ -16,6 +16,8 @@ import {
   Img,
 } from "./ContactElements";
 import { init, send } from "emailjs-com";
+import ReCAPTCHA from "react-google-recaptcha";
+
 init("user_9dp5UoOqeUcTQvcaoAnGT");
 
 const ContactSection = ({
@@ -36,6 +38,7 @@ const ContactSection = ({
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [captchaVal, setCaptchaVal] = useState(null);
 
   const formInfo = {
     from_name: name,
@@ -43,9 +46,18 @@ const ContactSection = ({
     reply_to: email,
   };
 
+  const onCaptcha = (value) => {
+    setCaptchaVal(value);
+  };
+
   const submit = async (e) => {
     e.preventDefault();
-    if (name.trim() !== "" && email.trim() !== "" && message.trim() !== "") {
+    if (
+      name.trim() !== "" &&
+      email.trim() !== "" &&
+      message.trim() !== "" &&
+      captchaVal
+    ) {
       send("service_p7znamw", "contact_form", formInfo)
         .then((res) => {
           alert(`name: ${name}, email: ${email}, message: ${message}`);
@@ -58,6 +70,7 @@ const ContactSection = ({
       alert("Form invalid");
     }
   };
+
   return (
     <>
       <ContactContainer lightBg={lightBg} id="contact">
@@ -88,14 +101,23 @@ const ContactSection = ({
                     onChange={(e) => setMessage(e.target.value)}
                   />
                   <br />
-                  <div
+                  {/* <div
                     class="g-recaptcha"
                     data-sitekey="6LfvDuAZAAAAAHofENLOimCHMHOefdZ-5p4UPBOq"
-                  ></div>
+                  ></div> */}
+                  <ReCAPTCHA
+                    sitekey="6LfvDuAZAAAAAHofENLOimCHMHOefdZ-5p4UPBOq"
+                    onChange={onCaptcha}
+                  />
                   <Button
                     title={"Submit"}
-                    // formInfo={formInfo}
                     submit={submit}
+                    isDisabled={
+                      !captchaVal ||
+                      name.trim() === "" ||
+                      email.trim() === "" ||
+                      message.trim() === ""
+                    }
                     lightBg={lightBg}
                     primary={primary}
                     dark={dark}
