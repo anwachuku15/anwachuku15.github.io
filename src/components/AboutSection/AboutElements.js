@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link as ScrollLink } from "react-scroll";
 
 const lightRed = "#ffefef";
 const black = "#060101";
@@ -8,6 +9,9 @@ const lightBlack = "#181625";
 export const AboutContainer = styled.div`
   color: ${({ lightBg }) => (lightBg ? "#000" : "#fff")};
   background: ${({ lightBg }) => (lightBg ? lightRed : black)};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media screen and (max-width: 768px) {
     padding: 100px 0;
@@ -17,13 +21,24 @@ export const AboutContainer = styled.div`
 export const AboutWrapper = styled.div`
   display: grid;
   z-index: 1;
-  height: 860px;
+  height: fit-content;
   width: 100%;
   max-width: 1100px;
   margin-right: auto;
   margin-left: auto;
   padding: 0 24px;
   justify-content: center;
+`;
+
+export const AboutH1 = styled.h1`
+  font-size: 2.5rem;
+  color: #322f4e;
+  margin-top: 60px;
+  margin-bottom: 64px;
+
+  @media screen and (max-width: 480px) {
+    font-size: 2rem;
+  }
 `;
 
 export const AboutRow = styled.div`
@@ -83,6 +98,23 @@ export const Subtitle = styled.p`
   font-size: 18px;
   line-height: 24px;
   color: ${({ lightTextDesc }) => (lightTextDesc ? "#fff" : lightBlack)};
+`;
+
+export const ContactLink = styled(ScrollLink)`
+  font-size: 18px;
+  text-decoration: none;
+
+  cursor: pointer;
+`;
+
+export const ContactP = styled.p`
+  display: contents;
+  color: #d23f3f;
+  transition: color 0.1s ease;
+
+  ${ContactLink}:hover & {
+    color: #12d3d3;
+  }
 `;
 
 export const BtnWrap = styled.div`
