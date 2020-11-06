@@ -7,7 +7,7 @@ export const object1 = {
   topline: "Web Application Development",
   heading: "Fast, responsive web apps that look great on any device.",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "I build front-end and full-stack web/mobile applications. I am proficient in the MERN stack (MongoDB, Express, React, and Node) as well as Python's Django web framework. I also build cross-platform mobile applications with React Native.",
   buttonLabel: "See more",
   imgStart: false,
   img: require("../../assets/images/svgs/responsivewebapp.svg"),
