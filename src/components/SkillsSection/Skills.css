@@ -1,0 +1,115 @@
+.skills__container {
+  /* background-color: #ffefef; */
+  /* background-color: #f7f7f7; */
+  padding-top: 52px;
+  padding-bottom: 46px;
+}
+
+@media (max-width: 980px) {
+  .skills__headerContainer {
+    padding: 30px 0;
+  }
+  .skills__headerDiv {
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 981px) {
+  .skills__headerContainer {
+    padding: 2% 0;
+  }
+  .skills__headerDiv {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1350px) {
+  .skills__headerContainer {
+    padding: 27px 0;
+  }
+}
+
+.skills__headerContainer {
+  width: 80%;
+  max-width: 1080px;
+  margin: auto;
+}
+
+.skills__headerDiv {
+  width: 100%;
+}
+
+.skills__header {
+  /* animation-name: skillsHeaderFade;
+      animation-duration: 1000ms;
+      animation-delay: 0ms;
+      opacity: 0;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: both; */
+  margin-bottom: 10px;
+}
+
+.skills__headerText {
+}
+
+.skills__headerText > h2 {
+  font-size: 48px;
+  /* font-family: prata; */
+  line-height: 1.6em;
+  text-align: center;
+  padding-bottom: 10px;
+  color: #333;
+  font-weight: 500;
+}
+
+.skills__divider {
+  /* animation-name: skillsDividerSlideTop;
+        animation-duration: 1000ms;
+        animation-delay: 0ms;
+        opacity: 0;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+        transform: translate3d(0px, -20%, 0px); */
+  max-width: 70px;
+  height: 23px;
+  margin: 0 auto 30px auto;
+  box-sizing: content-box;
+  border-color: #d23f3f transparent transparent transparent;
+  border-top-width: 3px;
+  border-style: solid;
+  content: "";
+  width: 100%;
+  height: 1px;
+}
+
+.skills__dividerInternal {
+  display: inline-block;
+  width: 100%;
+}
+
+.skills__icon {
+  display: flex;
+  margin: auto;
+  /* justify-content: center; */
+  color: #d23f3f;
+  text-align: center;
+  margin-bottom: 20px;
+  background: black;
+  border-radius: 100px;
+  padding: 30px;
+  width: max-content;
+}
+
+.skills__iconTitle {
+  /* font-family: robotoSlab; */
+  font-size: 20px;
+  min-height: 50px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.skills__description {
+  line-height: 2em;
+  text-align: center;
+}
