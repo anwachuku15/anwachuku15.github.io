@@ -8,7 +8,7 @@ const lightRed = "#ffefef";
 
 export const ContactContainer = styled.div`
   color: ${({ lightBg }) => (lightBg ? "#000" : "#fff")};
-  background: ${({ lightBg }) => (lightBg ? lightRed : "#322f4e")};
+  background: ${({ lightBg }) => (lightBg ? "white" : "#322f4e")};
 
   @media screen and (max-width: 768px) {
     padding: 100px 0;
