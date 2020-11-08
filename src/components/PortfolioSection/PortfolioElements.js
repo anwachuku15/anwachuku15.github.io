@@ -54,7 +54,7 @@ export const PortfolioCard = styled(motion.div)`
   border-radius: 10px;
   /* max-height: 340px; */
   height: fit-content;
-  padding: 30px;
+  padding-bottom: 30px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   /* transition: all 0.2s ease-in-out; */
@@ -95,6 +95,8 @@ export const PortfolioIcon = styled(motion.img)`
   /* height: 160px; */
   /* margin-bottom: 10px; */
   width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   /* height: 195px; */
 `;
 
@@ -187,14 +189,36 @@ export const NextButton = styled.div`
 `;
 
 export const PortfolioH1 = styled(motion.h1)`
-  font-size: 2.5rem;
+  /* font-size: 2.5rem; */
+  font-size: 48px;
+  line-height: 1.6em;
+  font-weight: 500;
   color: white;
   /* margin-top: 10px; */
-  margin-bottom: 64px;
+  /* margin-bottom: 64px; */
+  padding-bottom: 10px;
 
   @media screen and (max-width: 480px) {
-    font-size: 2rem;
+    /* font-size: 2rem; */
   }
+`;
+
+export const PortfolioDivider = styled(motion.div)`
+  max-width: 70px;
+  height: 23px;
+  margin: 0 auto 64px auto;
+  box-sizing: content-box;
+  border-color: #d23f3f transparent transparent transparent;
+  border-top-width: 3px;
+  border-style: solid;
+  content: "";
+  width: 100%;
+  height: 1px;
+`;
+
+export const PortfolioDividerInternal = styled(motion.div)`
+  display: inline-block;
+  width: 100%;
 `;
 
 export const PortfolioH2 = styled(motion.h2)`

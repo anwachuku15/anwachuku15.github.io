@@ -10,6 +10,8 @@ import {
   PortfolioCard,
   PortfolioIcon,
   PortfolioH2,
+  PortfolioDivider,
+  PortfolioDividerInternal,
   // PortfolioP,
   ModalButtonsContainer,
   ViewSiteButtonsContainer,
@@ -94,7 +96,10 @@ const PortfolioSection = () => {
   // snap points
   return (
     <PortfolioContainer id="portfolio">
-      <PortfolioH1>Projects</PortfolioH1>
+      <PortfolioH1>Portfolio</PortfolioH1>
+      <PortfolioDivider>
+        <PortfolioDividerInternal />
+      </PortfolioDivider>
       <AnimateSharedLayout type="crossfade">
         <PortfolioWrapper>
           {projects.map((project, index) => (
