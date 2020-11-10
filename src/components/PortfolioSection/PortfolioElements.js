@@ -71,7 +71,9 @@ export const SelectedCard = styled(motion.div)`
   display: flex;
   flex-direction: column;
   position: fixed;
-  height: 560px;
+  height: fit-content;
+  /* max-height: 75%; */
+  /* height: 560px; */
   /* width: 40%; */
   width: 700px;
   top: 100px;
@@ -79,14 +81,18 @@ export const SelectedCard = styled(motion.div)`
   justify-content: flex-start;
   align-items: center;
   border-radius: 10px;
-  padding: 30px 30px 15px 30px;
+  /* padding: 30px 30px 15px 30px; */
+  padding-bottom: 15px;
+  overflow: hidden;
 
   @media screen and (max-width: 740px) {
     width: 460px;
+    /* height: 70vh; */
   }
 
   @media screen and (max-width: 480px) {
     width: 90%;
+    /* height: 70vh; */
   }
 `;
 
@@ -103,16 +109,16 @@ export const PortfolioIcon = styled(motion.img)`
 export const CarouselWrapper = styled.div`
   display: flex;
   height: 70%;
-  width: 90%;
+  width: 100%;
   position: relative;
   @media screen and (max-width: 740px) {
-    width: 400px;
-    height: 65%;
+    /* width: 400px; */
+    height: fit-content;
   }
 
   @media screen and (max-width: 480px) {
-    width: 360px;
-    height: 60%;
+    /* width: 360px; */
+    height: fit-content;
   }
 `;
 
@@ -136,55 +142,70 @@ export const Carousel = styled(motion.div)`
 `;
 
 export const SelectedImage = styled(motion.img)`
+  object-fit: contain;
   width: 100%;
+  height: 100%;
   -webkit-user-drag: none;
+  /* 
+  @media screen and (max-width: 740px) {
+    width: 460px;
+    height: fit-content;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 90%;
+    height: fit-content;
+  } */
+`;
+
+export const CarouselControls = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: rgba(255, 255, 255, 0.7);
 `;
 
 export const PrevButton = styled.div`
-  top: calc(50% - 20px);
-  position: absolute;
-  background: rgba(0, 0, 0, 0.3);
-  color: white;
-  border-radius: 30px;
-  width: 40px;
-  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgba(107, 107, 107, 0.3);
+  color: white;
+  border-top-right-radius: 5px;
+  width: 60px;
+  height: 60px;
   user-select: none;
   cursor: pointer;
   font-weight: bold;
   font-size: 18px;
   z-index: 2;
-  left: 10px;
   transition: background 0.2s ease;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(107, 107, 107, 0.6);
   }
 `;
 
 export const NextButton = styled.div`
-  top: calc(50% - 20px);
-  position: absolute;
-  background: rgba(0, 0, 0, 0.3);
-  color: white;
-  border-radius: 30px;
-  width: 40px;
-  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgba(107, 107, 107, 0.3);
+  color: white;
+  border-top-left-radius: 5px;
+  width: 60px;
+  height: 60px;
   user-select: none;
   cursor: pointer;
   font-weight: bold;
   font-size: 18px;
   z-index: 2;
-  right: 10px;
   transition: background 0.2s ease;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(107, 107, 107, 0.6);
   }
 `;
 
@@ -233,11 +254,26 @@ export const SelectedTextContent = styled(motion.div)`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  padding: 0 30px 0 30px;
+  overflow: scroll;
 `;
 
 export const SelectedH2 = styled(motion.h2)`
   text-align: left;
   width: 100%;
+
+  @media screen and (max-width: 480px) {
+    font-size: 18px;
+  }
+`;
+
+export const SelectedH3 = styled(motion.h3)`
+  text-align: left;
+  width: 100%;
+
+  @media screen and (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
 export const PortfolioP = styled(motion.p)`
@@ -255,6 +291,7 @@ export const ModalButtonsContainer = styled.div`
   width: 100%;
   justify-content: space-between;
   margin-top: 20px;
+  padding: 0 30px 15px 30px;
 `;
 
 export const ViewSiteButtonsContainer = styled(motion.div)`

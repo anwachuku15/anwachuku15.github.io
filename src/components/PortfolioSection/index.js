@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 // import { Link } from "react-router-dom";
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
 // import { wrap } from "@popmotion/popcorn";
+import ScrollAnimation from "react-animate-on-scroll";
 
 import {
   PortfolioContainer,
@@ -25,9 +26,11 @@ import {
   CarouselWindow,
   // Widget,
   Carousel,
+  CarouselControls,
   SelectedImage,
   SelectedTextContent,
   SelectedH2,
+  SelectedH3,
   SelectedP,
   Overlay,
   NextButton,
@@ -96,29 +99,60 @@ const PortfolioSection = () => {
   // snap points
   return (
     <PortfolioContainer id="portfolio">
-      <PortfolioH1>Portfolio</PortfolioH1>
-      <PortfolioDivider>
-        <PortfolioDividerInternal />
-      </PortfolioDivider>
+      <ScrollAnimation
+        animateIn="slideInRight"
+        duration={1.5}
+        animateOnce={true}
+      >
+        <PortfolioH1>Portfolio</PortfolioH1>
+      </ScrollAnimation>
+      <ScrollAnimation
+        animateIn="fadeIn"
+        duration={1}
+        // delay={1000}
+        animateOnce
+        style={{ width: 70 }}
+      >
+        <PortfolioDivider>
+          <PortfolioDividerInternal />
+        </PortfolioDivider>
+      </ScrollAnimation>
       <AnimateSharedLayout type="crossfade">
         <PortfolioWrapper>
-          {projects.map((project, index) => (
-            <PortfolioCard
-              layoutId={project.id}
-              onClick={() => selectProject(project.id)}
-              key={index}
-            >
-              <PortfolioIcon src={project.images[0]} />
-              <PortfolioH2>{project.name}</PortfolioH2>
-              <Button
-                title="Learn More"
-                openModal={() => selectProject(project.id)}
-                lightBg={true}
-              />
+          {projects.map((project, index) => {
+            let delay;
+            if (index === 0) delay = 0;
+            else if (index === 1) delay = 100;
+            else if (index === 2) delay = 200;
+            else if (index === 3) delay = 300;
+            else if (index === 4) delay = 400;
+            else if (index === 5) delay = 500;
 
-              {/* <PortfolioP>{project.description}</PortfolioP> */}
-            </PortfolioCard>
-          ))}
+            return (
+              <ScrollAnimation
+                offset={0}
+                animateOnce={true}
+                animateIn={"fadeInUp"}
+                delay={delay}
+                key={index}
+              >
+                <PortfolioCard
+                  layoutId={project.id}
+                  onClick={() => selectProject(project.id)}
+                >
+                  <PortfolioIcon src={project.images[0]} />
+                  <PortfolioH2>{project.name}</PortfolioH2>
+                  <Button
+                    title="Learn More"
+                    openModal={() => selectProject(project.id)}
+                    lightBg={true}
+                  />
+
+                  {/* <PortfolioP>{project.description}</PortfolioP> */}
+                </PortfolioCard>
+              </ScrollAnimation>
+            );
+          })}
         </PortfolioWrapper>
         <AnimatePresence>
           {selectedId && (
@@ -144,17 +178,20 @@ const PortfolioSection = () => {
                         src={images[imageIndex === 2 ? 0 : imageIndex + 1]}
                       />
                     </Carousel>
+                    <CarouselControls>
+                      <PrevButton onClick={() => slideControl(-1)}>
+                        <ArrowBackIosRounded />
+                      </PrevButton>
+                      <NextButton onClick={() => slideControl(1)}>
+                        <ArrowForwardIosRounded />
+                      </NextButton>
+                    </CarouselControls>
                   </CarouselWindow>
                 </CarouselWrapper>
-                <PrevButton onClick={() => slideControl(-1)}>
-                  <ArrowBackIosRounded />
-                </PrevButton>
-                <NextButton onClick={() => slideControl(1)}>
-                  <ArrowForwardIosRounded />
-                </NextButton>
+
                 <SelectedTextContent>
                   <SelectedH2>{projects[selectedId - 1].name}</SelectedH2>
-                  <h3>({projects[selectedId - 1].stack})</h3>
+                  <SelectedH3>({projects[selectedId - 1].stack})</SelectedH3>
                   <SelectedP>{projects[selectedId - 1].description}</SelectedP>
                 </SelectedTextContent>
                 <ModalButtonsContainer>
