@@ -19,11 +19,19 @@ const Sidebar = ({ isOpen, toggleMenu }) => {
       </Icon>
       <SidebarWrapper>
         <SidebarMenu>
-          <SidebarLink to="home">Home</SidebarLink>
+          <SidebarLink to="home" onClick={toggleMenu}>
+            Home
+          </SidebarLink>
           {/* <SidebarLink to="about">About</SidebarLink> */}
-          <SidebarLink to="whatIdo">Skills</SidebarLink>
-          <SidebarLink to="portfolio">Portfolio</SidebarLink>
-          <SidebarLink to="contact">Contact</SidebarLink>
+          <SidebarLink to="whatIdo" onClick={toggleMenu}>
+            Skills
+          </SidebarLink>
+          <SidebarLink to="portfolio" onClick={toggleMenu}>
+            Portfolio
+          </SidebarLink>
+          <SidebarLink to="contact" onClick={toggleMenu}>
+            Contact
+          </SidebarLink>
         </SidebarMenu>
         <SideBtnWrap>
           <SidebarBtnLink href="https://github.com/anwachuku15" target="_blank">
