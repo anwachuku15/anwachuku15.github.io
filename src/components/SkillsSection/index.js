@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Skills.css";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -15,27 +15,43 @@ import ScrollAnimation from "react-animate-on-scroll";
 const SectorRow1 = () => (
   <>
     <Grid item xs={12} md={4} lg={4} style={{ height: 350 }}>
-      <div className="skills__icon">
-        <FaCode fontSize={60} />
-      </div>
+      <ScrollAnimation animateIn="flipInX" animateOnce offset={0}>
+        <div className="skills__icon">
+          <FaCode fontSize={60} />
+        </div>
+      </ScrollAnimation>
       <p className="skills__iconTitle">Web Application Development</p>
       <p className="skills__description">
         Fast, responsive and engaging apps that bring your ideas to life.
       </p>
     </Grid>
     <Grid item xs={12} md={4} lg={4} style={{ height: 350 }}>
-      <div className="skills__icon">
-        <FaMobileAlt fontSize={60} />
-      </div>
+      <ScrollAnimation
+        animateIn="flipInX"
+        animateOnce
+        delay={window.innerWidth > 960 ? 100 : 0}
+        offset={0}
+      >
+        <div className="skills__icon">
+          <FaMobileAlt fontSize={60} />
+        </div>
+      </ScrollAnimation>
       <p className="skills__iconTitle">Mobile Application Development</p>
       <p className="skills__description">
         Cross-platform apps built with efficiency and speed for iOS and Android.
       </p>
     </Grid>
     <Grid item xs={12} md={4} lg={4} style={{ height: 350 }}>
-      <div className="skills__icon">
-        <FaDatabase fontSize={60} />
-      </div>
+      <ScrollAnimation
+        animateIn="flipInX"
+        animateOnce
+        delay={window.innerWidth > 960 ? 200 : 0}
+        offset={0}
+      >
+        <div className="skills__icon">
+          <FaDatabase fontSize={60} />
+        </div>
+      </ScrollAnimation>
       <p className="skills__iconTitle">Database Design</p>
       <p className="skills__description">
         Proper Database design for effective Web & Mobile development, always
@@ -48,9 +64,16 @@ const SectorRow1 = () => (
 const SectorRow2 = () => (
   <>
     <Grid item xs={12} md={4} lg={4} style={{ height: 350 }}>
-      <div className="skills__icon">
-        <FaCogs fontSize={60} />
-      </div>
+      <ScrollAnimation
+        animateIn="flipInX"
+        animateOnce
+        delay={window.innerWidth > 960 ? 300 : 0}
+        offset={0}
+      >
+        <div className="skills__icon">
+          <FaCogs fontSize={60} />
+        </div>
+      </ScrollAnimation>
       <p className="skills__iconTitle">API Development</p>
       <p className="skills__description">
         REST APIs that are tailored to your needs and follow the best practices
@@ -58,9 +81,16 @@ const SectorRow2 = () => (
       </p>
     </Grid>
     <Grid item xs={12} md={4} lg={4} style={{ height: 350 }}>
-      <div className="skills__icon">
-        <FaLink fontSize={60} />
-      </div>
+      <ScrollAnimation
+        animateIn="flipInX"
+        animateOnce
+        delay={window.innerWidth > 960 ? 400 : 0}
+        offset={0}
+      >
+        <div className="skills__icon">
+          <FaLink fontSize={60} />
+        </div>
+      </ScrollAnimation>
       <p className="skills__iconTitle">Third-party API Integration</p>
       <p className="skills__description">
         Integration with any third-party API of your choice. Extend the
@@ -69,9 +99,16 @@ const SectorRow2 = () => (
     </Grid>
 
     <Grid item xs={12} md={4} lg={4} style={{ height: 350 }}>
-      <div className="skills__icon">
-        <FaCloud fontSize={60} />
-      </div>
+      <ScrollAnimation
+        animateIn="flipInX"
+        animateOnce
+        delay={window.innerWidth > 960 ? 500 : 0}
+        offset={0}
+      >
+        <div className="skills__icon">
+          <FaCloud fontSize={60} />
+        </div>
+      </ScrollAnimation>
       <p className="skills__iconTitle">Cloud Integration</p>
       <p className="skills__description">
         Deployment and maintenance of your apps with industry standard Cloud
@@ -92,6 +129,15 @@ const useStyles = makeStyles(() => ({
 
 const SkillsSection = () => {
   const classes = useStyles();
+  // let delay;
+  // useEffect(() => {
+  //   window.onresize = (e) => {
+  //     console.log(window.innerWidth);
+  //     if (window.innerWidth < 960) {
+  //       delay = 0;
+  //     }
+  //   };
+  // });
 
   return (
     <div className="skills__container" id="whatIdo">
