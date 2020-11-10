@@ -10,6 +10,7 @@ import {
   FaDatabase,
   FaCloud,
 } from "react-icons/fa";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const SectorRow1 = () => (
   <>
@@ -33,6 +34,21 @@ const SectorRow1 = () => (
     </Grid>
     <Grid item xs={12} md={4} lg={4} style={{ height: 350 }}>
       <div className="skills__icon">
+        <FaDatabase fontSize={60} />
+      </div>
+      <p className="skills__iconTitle">Database Design</p>
+      <p className="skills__description">
+        Proper Database design for effective Web & Mobile development, always
+        aiming for performance, scale and stability.
+      </p>
+    </Grid>
+  </>
+);
+
+const SectorRow2 = () => (
+  <>
+    <Grid item xs={12} md={4} lg={4} style={{ height: 350 }}>
+      <div className="skills__icon">
         <FaCogs fontSize={60} />
       </div>
       <p className="skills__iconTitle">API Development</p>
@@ -41,11 +57,6 @@ const SectorRow1 = () => (
         in performance and security.
       </p>
     </Grid>
-  </>
-);
-
-const SectorRow2 = () => (
-  <>
     <Grid item xs={12} md={4} lg={4} style={{ height: 350 }}>
       <div className="skills__icon">
         <FaLink fontSize={60} />
@@ -56,24 +67,15 @@ const SectorRow2 = () => (
         functionality of your apps with the least amount of effort.
       </p>
     </Grid>
-    <Grid item xs={12} md={4} lg={4} style={{ height: 350 }}>
-      <div className="skills__icon">
-        <FaDatabase fontSize={60} />
-      </div>
-      <p className="skills__iconTitle">Database Design</p>
-      <p className="skills__description">
-        Proper Database design for effective Web & Mobile development, always
-        aiming for performance, scale and stability.
-      </p>
-    </Grid>
+
     <Grid item xs={12} md={4} lg={4} style={{ height: 350 }}>
       <div className="skills__icon">
         <FaCloud fontSize={60} />
       </div>
       <p className="skills__iconTitle">Cloud Integration</p>
       <p className="skills__description">
-        Deployment and maintenance of your apps in a wide range of Cloud
-        Services, from fully managed to highly customizable VPS.
+        Deployment and maintenance of your apps with industry standard Cloud
+        Services.
       </p>
     </Grid>
   </>
@@ -94,16 +96,29 @@ const SkillsSection = () => {
   return (
     <div className="skills__container" id="whatIdo">
       <div className="skills__headerContainer">
-        <div className="skills__headerDiv">
-          <div className="skills__header">
-            <div className="skills__headerText">
-              <h2>What I Do</h2>
+        <ScrollAnimation
+          animateIn="slideInLeft"
+          duration={1}
+          animateOnce={true}
+        >
+          <div className="skills__headerDiv">
+            <div className="skills__header">
+              <div className="skills__headerText">
+                <h2>What I Do</h2>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="skills__divider">
-          <div className="skills__dividerInternal"></div>
-        </div>
+        </ScrollAnimation>
+        <ScrollAnimation
+          animateIn="slideInLeft"
+          duration={1}
+          delay={200}
+          animateOnce={true}
+        >
+          <div className="skills__divider">
+            <div className="skills__dividerInternal"></div>
+          </div>
+        </ScrollAnimation>
       </div>
       <div className={classes.root}>
         <div style={{ paddingLeft: 30, paddingRight: 30 }}>
