@@ -65,7 +65,7 @@ export const projects = [
     id: 5,
     linkTo: "/landingpage",
     name: "Business Landing Page Clone",
-    stack: "React / Hosting",
+    stack: "React / Firebase Hosting",
     description: "Business landing page clone with responsive web design.",
     images: [carousel, services, contact],
     url: "https://officium-f28bd.web.app/",
