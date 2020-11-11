@@ -27,7 +27,7 @@ export const PortfolioContainer = styled(motion.div)`
 `;
 
 export const PortfolioWrapper = styled(motion.div)`
-  max-width: 1000px;
+  max-width: 1300px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
