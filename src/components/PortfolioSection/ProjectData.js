@@ -16,6 +16,8 @@ import carousel from "../../assets/images/landingpage/carousel.png";
 import services from "../../assets/images/landingpage/services.png";
 import contact from "../../assets/images/landingpage/contact.png";
 
+// TODO: Add LNB project
+
 export const projects = [
   {
     id: 1,
