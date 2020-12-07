@@ -13,11 +13,15 @@ export const BtnWrapper = styled.div`
   margin-top: 20px;
   padding: 6px 15px 8px 15px;
   border-radius: 50px;
-  border: ${({ lightBg, disabled }) => {
+  border: ${({ lightBg, disabled, contactLinkedIn, contactGmail }) => {
     if (disabled) {
       return `${"2px solid lightgray"}`;
-    } else if (lightBg) {
+    } else if (lightBg && !contactLinkedIn && !contactGmail) {
       return `${"2px solid #322f4e"}`;
+    } else if (contactLinkedIn) {
+      return `${"2px solid #0A66C2"}`;
+    } else if (contactGmail) {
+      return `${"2px solid #EA4335"}`;
     } else {
       return `${"2px solid white"}`;
     }
@@ -29,9 +33,19 @@ export const BtnWrapper = styled.div`
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
 
   &:hover {
-    background-color: ${({ disabled }) =>
-      disabled ? `${"lightgray"}` : `${"rgba(210, 63, 63, 1)"}`};
-    border: 2px solid transparent;
+    background-color: ${({ disabled, contactLinkedIn, contactGmail }) => {
+      if (disabled) {
+        return `${"lightgray"}`;
+      } else if (contactLinkedIn) {
+        return `${"#0A66C2"}`;
+      } else if (contactGmail) {
+        return `${"#34A853"}`;
+      } else {
+        return `${"rgba(210,63,63,1)"}`;
+      }
+    }};
+    border: ${({ contactGmail }) =>
+      contactGmail ? `${"2px solid #34A853"}` : `${"2px solid transparent"}`};
     align-items: center;
   }
 `;
@@ -87,7 +101,17 @@ export const SubmitBtn = styled.button`
 
 export const Btn = styled.p`
   display: flex;
-  color: ${({ lightBg }) => (lightBg ? "#322f4e" : "white")};
+  color: ${({ lightBg, contactLinkedIn, contactGmail }) => {
+    if (lightBg && !contactLinkedIn && !contactGmail) {
+      return "#322f4e";
+    } else if (contactLinkedIn) {
+      return "#0A66C2";
+    } else if (contactGmail) {
+      return "#EA4335";
+    } else {
+      return "white";
+    }
+  }};
   text-decoration: none;
   font-size: 18px;
   transition: color 150ms ease;
@@ -107,5 +131,18 @@ export const Arrow = styled.div`
   ${BtnWrapper}:hover & {
     margin-left: 10px !important;
     color: white;
+  }
+`;
+
+export const GmailArrow = styled.div`
+  position: relative;
+  bottom: -3px;
+  margin-left: -20px;
+  opacity: 0;
+  transition: all 200ms;
+
+  ${BtnWrapper}:hover & {
+    margin-left: 10px !important;
+    opacity: 1;
   }
 `;
