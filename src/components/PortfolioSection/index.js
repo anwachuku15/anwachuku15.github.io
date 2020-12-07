@@ -99,15 +99,11 @@ const PortfolioSection = () => {
   // snap points
   return (
     <PortfolioContainer id="portfolio">
-      <ScrollAnimation
-        animateIn="slideInRight"
-        duration={1.5}
-        animateOnce={true}
-      >
+      <ScrollAnimation animateIn="slideInRight" duration={1} animateOnce={true}>
         <PortfolioH1>Portfolio</PortfolioH1>
       </ScrollAnimation>
       <ScrollAnimation
-        animateIn="fadeIn"
+        animateIn="slideInLeft"
         duration={1}
         // delay={1000}
         animateOnce
@@ -133,6 +129,7 @@ const PortfolioSection = () => {
                 offset={0}
                 animateOnce={true}
                 animateIn={"fadeInUp"}
+                duration={1}
                 delay={delay}
                 key={index}
               >
