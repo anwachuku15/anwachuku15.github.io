@@ -6,6 +6,7 @@ import {
   SubmitBtn,
   Btn,
   Arrow,
+  GmailArrow,
 } from "./ButtonElements";
 import {
   KeyboardArrowDownRounded,
@@ -14,10 +15,14 @@ import {
   SendOutlined,
   InfoOutlined,
 } from "@material-ui/icons";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import GmailIcon from "./GmailIcon";
 
 const Button = ({
   title,
   openModal,
+  contactLinkedIn,
+  contactGmail,
   submit,
   isDisabled,
   direction,
@@ -29,7 +34,21 @@ const Button = ({
   dark2,
 }) => {
   return (
-    <BtnWrapper lightBg={lightBg} disabled={isDisabled}>
+    <BtnWrapper
+      lightBg={lightBg}
+      disabled={isDisabled}
+      contactLinkedIn={contactLinkedIn}
+      contactGmail={contactGmail}
+      onClick={() => {
+        if (openModal) {
+          openModal();
+        } else if (contactLinkedIn) {
+          window.open("https://www.linkedin.com/in/anwachuku15/", "_blank");
+        } else if (contactGmail) {
+          window.open("https://www.google.com/", "_blank");
+        }
+      }}
+    >
       {route && <RouteBtn to={route}>{title}</RouteBtn>}
       {direction && (
         <>
@@ -75,6 +94,44 @@ const Button = ({
           <Arrow>
             <InfoOutlined fontSize="small" />
           </Arrow>
+        </>
+      )}
+      {contactLinkedIn && (
+        <>
+          <Btn
+            onClick={() =>
+              window.open("https://www.linkedin.com/in/anwachuku15/", "_blank")
+            }
+            lightBg={lightBg}
+            contactLinkedIn={contactLinkedIn}
+          >
+            {title}
+          </Btn>
+          <Arrow>
+            <LinkedInIcon fontSize="small" />
+          </Arrow>
+        </>
+      )}
+      {contactGmail && (
+        <>
+          <Btn
+            onClick={() => window.open("https://www.google.com/", "_blank")}
+            lightBg={lightBg}
+            contactGmail={contactGmail}
+          >
+            {title}
+          </Btn>
+          <GmailArrow>
+            <GmailIcon
+              style={{
+                width: 20,
+                height: 20,
+                // margin: 1,
+                backgroundColor: "white",
+                borderRadius: 2,
+              }}
+            />
+          </GmailArrow>
         </>
       )}
       {submit && (
