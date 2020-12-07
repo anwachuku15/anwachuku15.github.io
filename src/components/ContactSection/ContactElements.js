@@ -59,12 +59,42 @@ export const TextWrapper = styled.div`
 
 export const TopLine = styled.p`
   color: #d23f3f;
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 24px;
+  line-height: 24px;
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
+  text-align: center;
+`;
+
+export const ContactOption = styled.p`
+  color: black;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
+  /* letter-spacing: 1.4px; */
+  text-transform: uppercase;
+  /* margin-bottom: 16px; */
+  text-align: center;
+`;
+
+export const ContactDivider = styled(motion.div)`
+  /* max-width: 70px; */
+  /* height: 23px; */
+  margin: 20px auto 20px auto;
+  box-sizing: content-box;
+  border-color: #d23f3f transparent transparent transparent;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  content: "";
+  width: 100%;
+  /* height: 1px; */
+`;
+
+export const ContactDividerInternal = styled(motion.div)`
+  display: inline-block;
+  /* width: 100%; */
 `;
 
 export const FormWrapper = styled(motion.form)`
@@ -72,13 +102,21 @@ export const FormWrapper = styled(motion.form)`
   flex-direction: column;
   width: 100%;
   height: 100%;
+  margin-top: 10px;
 `;
 
 export const FormName = styled(motion.input)`
   margin-bottom: 10px;
   padding: 10px 15px;
   background: #322f4e;
-  border: 0;
+  border: ${({ isValid, touched }) => {
+    if (!isValid && touched) {
+      return `${"2px solid red"}`;
+    } else {
+      return `${"2px solid transparent"}`;
+    }
+  }};
+  transition: border 200ms ease;
   border-radius: 10px;
   outline: none;
   color: white;
@@ -93,7 +131,14 @@ export const FormEmail = styled(motion.input)`
   margin-bottom: 10px;
   padding: 10px 15px;
   background: #322f4e;
-  border: 0;
+  border: ${({ isValid, touched, emailRegex }) => {
+    if (!emailRegex && touched) {
+      return `${"2px solid red"}`;
+    } else {
+      return `${"2px solid transparent"}`;
+    }
+  }};
+  transition: border 200ms ease;
   border-radius: 10px;
   outline: none;
   color: white;
