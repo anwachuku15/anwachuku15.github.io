@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import Button from "../Button";
 import {
   ContactContainer,
@@ -8,13 +8,17 @@ import {
   Column2,
   TextWrapper,
   TopLine,
+  ContactDivider,
+  ContactDividerInternal,
   FormWrapper,
   FormName,
   FormEmail,
   FormMessage,
   ImgWrap,
   Img,
+  ContactOption,
 } from "./ContactElements";
+import TextField from "@material-ui/core/TextField";
 import { init, send } from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -36,7 +40,11 @@ const ContactSection = ({
   buttonLabel,
 }) => {
   const [name, setName] = useState("");
+  const [isNameValid, setIsNameValid] = useState(false);
+  const [nameTouched, setNameTouched] = useState(false);
   const [email, setEmail] = useState("");
+  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [emailTouched, setEmailTouched] = useState(false);
   const [message, setMessage] = useState("");
   const [captchaVal, setCaptchaVal] = useState(null);
 
@@ -50,11 +58,14 @@ const ContactSection = ({
     setCaptchaVal(value);
   };
 
+  const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
   const submit = async (e) => {
     e.preventDefault();
     if (
       name.trim() !== "" &&
       email.trim() !== "" &&
+      emailRegex.test(email.toLowerCase()) &&
       message.trim() !== "" &&
       captchaVal
     ) {
@@ -79,20 +90,114 @@ const ContactSection = ({
             <Column1>
               <TextWrapper>
                 <TopLine>Contact</TopLine>
+                {/* <ContactOption>You can reach me through LinkedIn</ContactOption> */}
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Button
+                    title="LinkedIn"
+                    contactLinkedIn={true}
+                    lightBg={true}
+                  />
+                  {/* <Button title="Gmail" contactGmail={true} lightBg={true} /> */}
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
+                >
+                  <ContactDivider />
+                  <span
+                    style={{ marginLeft: 5, marginRight: 5, color: "gray" }}
+                  >
+                    OR
+                  </span>
+                  <ContactDivider />
+                </div>
                 <FormWrapper id="contact_form">
+                  {/* <ContactOption>Send me an email.</ContactOption> */}
+                  {/* <TextField
+                    variant="outlined"
+                    label="Name"
+                    type="text"
+                    // required
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                      if (nameTouched && name.trim() === "") {
+                        setIsNameValid(false);
+                      } else if (nameTouched && name.trim() !== "") {
+                        setIsNameValid(true);
+                      }
+                    }}
+                    onBlur={() => {
+                      setNameTouched(true);
+                      if (name.trim() !== "") {
+                        setIsNameValid(true);
+                      } else {
+                        setIsNameValid(false);
+                      }
+                    }}
+                    error={!isNameValid}
+                  /> */}
                   <FormName
                     placeholder="Name"
                     type="text"
                     name="name"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                      if (nameTouched && name.trim() === "") {
+                        setIsNameValid(false);
+                      } else if (nameTouched && name.trim() !== "") {
+                        setIsNameValid(true);
+                      }
+                    }}
+                    onBlur={() => {
+                      setNameTouched(true);
+                      if (name.trim() !== "") {
+                        setIsNameValid(true);
+                      } else {
+                        setIsNameValid(false);
+                      }
+                    }}
+                    isValid={name.trim() !== ""}
+                    touched={nameTouched}
                   />
                   <FormEmail
                     placeholder="Email"
                     type="email"
                     name="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (emailRegex.test(email.toLowerCase())) {
+                        setIsEmailValid(true);
+                      } else if (
+                        !emailRegex.test(email.toLowerCase()) &&
+                        emailTouched
+                      ) {
+                        setIsEmailValid(false);
+                      }
+                    }}
+                    onBlur={(e) => {
+                      setEmailTouched(true);
+                      if (emailRegex.test(email.toLowerCase())) {
+                        setIsEmailValid(true);
+                      } else {
+                        setIsEmailValid(false);
+                      }
+                    }}
+                    isValid={isEmailValid}
+                    touched={emailTouched}
+                    emailRegex={emailRegex.test(email)}
                   />
                   <FormMessage
                     placeholder="Message"
@@ -116,6 +221,7 @@ const ContactSection = ({
                       !captchaVal ||
                       name.trim() === "" ||
                       email.trim() === "" ||
+                      !emailRegex.test(email.toLowerCase()) ||
                       message.trim() === ""
                     }
                     lightBg={lightBg}
