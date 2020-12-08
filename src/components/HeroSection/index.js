@@ -54,7 +54,7 @@ const HeroSection = () => {
           <Button
             title="See my work!"
             direction="down"
-            scrollTo="portfolio"
+            scrollTo="whatIdo"
             lightBg={false}
           />
         </ScrollAnimation>
