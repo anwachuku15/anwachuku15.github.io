@@ -33,6 +33,7 @@ import {
   MobileCarouselWrapper,
   MobileCarouselWindow,
   MobileCarousel,
+  MobileCarouselControls,
   MobileSelectedImage,
   SelectedImage,
   SelectedTextContent,
@@ -267,14 +268,14 @@ const PortfolioSection = () => {
                           src={images[imageIndex === 2 ? 0 : imageIndex + 1]}
                         />
                       </MobileCarousel>
-                      <CarouselControls>
+                      <MobileCarouselControls>
                         <PrevButton onClick={() => slideControl(-1)}>
                           <ArrowBackIosRounded />
                         </PrevButton>
                         <NextButton onClick={() => slideControl(1)}>
                           <ArrowForwardIosRounded />
                         </NextButton>
-                      </CarouselControls>
+                      </MobileCarouselControls>
                     </MobileCarouselWindow>
                   </MobileCarouselWrapper>
 
@@ -292,6 +293,9 @@ const PortfolioSection = () => {
                       </SelectedH3>
                       <SelectedP>
                         {projects[selectedId - 1].description}
+                      </SelectedP>
+                      <SelectedP>
+                        {projects[selectedId - 1].description2}
                       </SelectedP>
                     </SelectedTextContent>
                     <ModalButtonsContainer>

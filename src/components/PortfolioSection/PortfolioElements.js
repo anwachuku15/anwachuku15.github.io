@@ -221,7 +221,7 @@ export const MobileSelectedCard = styled(motion.div)`
 export const MobileCarouselWrapper = styled.div`
   display: flex;
   height: 70%;
-  width: 100%;
+  width: 150%;
   position: relative;
   @media screen and (max-width: 740px) {
     /* width: 400px; */
@@ -251,7 +251,7 @@ export const MobileSelectedImage = styled(motion.img)`
   align-self: center;
   object-fit: contain;
   width: 100%;
-  /* height: 100%; */
+  /* height: 50%; */
   -webkit-user-drag: none;
   /* 
 @media screen and (max-width: 740px) {
@@ -266,6 +266,15 @@ export const MobileSelectedImage = styled(motion.img)`
 `;
 
 export const CarouselControls = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: rgba(255, 255, 255, 0.7);
+`;
+
+export const MobileCarouselControls = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
