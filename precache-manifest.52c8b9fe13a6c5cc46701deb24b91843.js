@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "86f67d983b55ff984d389aeb18dc921c",
+    "revision": "c7a106bd5eeeea62803ca6122a1bf47f",
     "url": "/index.html"
   },
   {
-    "revision": "4e671ff6959ea7419e53",
+    "revision": "5adbcbcf36d3762ce63e",
     "url": "/static/css/main.85357844.chunk.css"
   },
   {
-    "revision": "1da7f182b9ce244c866f",
-    "url": "/static/js/2.f09106b7.chunk.js"
+    "revision": "9f7f74b4a7d927d65c0f",
+    "url": "/static/js/2.e97736aa.chunk.js"
   },
   {
     "revision": "1937a0fc6634269e5f47f8181e27fdc7",
-    "url": "/static/js/2.f09106b7.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.e97736aa.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4e671ff6959ea7419e53",
-    "url": "/static/js/main.a0a0b18c.chunk.js"
+    "revision": "5adbcbcf36d3762ce63e",
+    "url": "/static/js/main.98a8b877.chunk.js"
   },
   {
     "revision": "4eb6c465c2efef3f23dc",
@@ -40,8 +40,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/contact.c07ea8e9.png"
   },
   {
+    "revision": "f25a46105a72c8b2403c72ec62051916",
+    "url": "/static/media/darkmode.f25a4610.png"
+  },
+  {
     "revision": "ce8e0096b9726fbc420d3441814768ba",
     "url": "/static/media/database.ce8e0096.svg"
+  },
+  {
+    "revision": "fb87d7f59bf4b5ffa2e6fbadf3c70127",
+    "url": "/static/media/eventmediapost.fb87d7f5.png"
   },
   {
     "revision": "63f3cd7cd2cb0f3cf02213ac9620ab7a",
@@ -54,6 +62,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7c2468a81bcd997a195dd53c84bf232c",
     "url": "/static/media/home.7c2468a8.png"
+  },
+  {
+    "revision": "7ad9799b13dd7e16f9c704be3b295255",
+    "url": "/static/media/lightmode.7ad9799b.png"
   },
   {
     "revision": "9ba408ab733fffedc0500bd21f210ec6",
@@ -88,11 +100,19 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/services.58e4b8a6.png"
   },
   {
+    "revision": "183bf2e8ef03adf56add6f1b729c88c0",
+    "url": "/static/media/signin.183bf2e8.png"
+  },
+  {
     "revision": "9f49521f82b6146f32dad6d4b6f85776",
     "url": "/static/media/signup.9f49521f.png"
   },
   {
     "revision": "41da0041df8ba91e12107cd31e347414",
     "url": "/static/media/spotifyclone.41da0041.png"
+  },
+  {
+    "revision": "afd6413d0af8813d76d5326997373498",
+    "url": "/static/media/userprofile.afd6413d.png"
   }
 ]);
