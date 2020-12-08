@@ -42,9 +42,11 @@ export const projects = [
     id: 2,
     linkTo: "",
     name: "LNB",
-    stack: "React Native / Firebase ",
+    stack: "React Native / Firebase",
     description:
-      "A social networking app built with React Native (optimized for iOS). Implemented Firebase for full backend support, including for authentication, database management, and storage. Features real-time chat functionality and push notifications. This is app is currently being tested through Apple Test Flight.",
+      "A social networking app built with React Native (optimized for iOS). Implemented Firebase for full backend support, including for authentication, database management, and storage. Features real-time chat functionality and push notifications. ",
+    description2:
+      "This is app is currently in beta testing via Apple Test Flight.",
     images: [lightmode, eventmediapost, userprofile],
     url: "",
     github: "https://github.com/anwachuku15/LNB",
