@@ -165,7 +165,7 @@ export const MobileCard = styled(motion.div)`
   justify-content: flex-start;
   align-items: center;
   border-radius: 10px;
-  /* max-height: 340px; */
+  /* max-height: 500px; */
   height: fit-content;
   padding-bottom: 30px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -180,13 +180,12 @@ export const MobileCard = styled(motion.div)`
 `;
 
 export const MobileIcon = styled(motion.img)`
-  /* width: 160px; */
-  /* height: 160px; */
-  /* margin-bottom: 10px; */
+  /* background: red; */
   width: 25%;
+  height: 25%;
+  object-fit: contain;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  /* height: 195px; */
 `;
 
 export const MobileSelectedCard = styled(motion.div)`
