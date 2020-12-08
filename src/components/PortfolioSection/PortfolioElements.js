@@ -158,6 +158,113 @@ export const SelectedImage = styled(motion.img)`
   } */
 `;
 
+export const MobileCard = styled(motion.div)`
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 10px;
+  /* max-height: 340px; */
+  height: fit-content;
+  padding-bottom: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* transition: all 0.2s ease-in-out; */
+
+  /* &:hover {
+    transform: scale(1.01);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  } */
+`;
+
+export const MobileIcon = styled(motion.img)`
+  /* width: 160px; */
+  /* height: 160px; */
+  /* margin-bottom: 10px; */
+  width: 25%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  /* height: 195px; */
+`;
+
+export const MobileSelectedCard = styled(motion.div)`
+  background: white;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  height: fit-content;
+  /* max-height: 75%; */
+  /* height: 560px; */
+  /* width: 40%; */
+  width: 700px;
+  top: 100px;
+  z-index: 1;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 10px;
+  /* padding: 30px 30px 15px 30px; */
+  padding-bottom: 15px;
+  overflow: hidden;
+
+  @media screen and (max-width: 740px) {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 90%;
+    /* height: 70vh; */
+  }
+`;
+
+export const MobileCarouselWrapper = styled.div`
+  display: flex;
+  height: 70%;
+  width: 100%;
+  position: relative;
+  @media screen and (max-width: 740px) {
+    /* width: 400px; */
+    height: fit-content;
+  }
+
+  @media screen and (max-width: 480px) {
+    /* width: 360px; */
+    height: fit-content;
+  }
+`;
+
+export const MobileCarouselWindow = styled.div`
+  position: relative;
+  overflow: hidden;
+  /* display: block; */
+`;
+
+export const MobileCarousel = styled(motion.div)`
+  display: flex;
+  position: relative;
+  left: -100%;
+  /* width: 10000px; */
+`;
+
+export const MobileSelectedImage = styled(motion.img)`
+  align-self: center;
+  object-fit: contain;
+  width: 100%;
+  /* height: 100%; */
+  -webkit-user-drag: none;
+  /* 
+@media screen and (max-width: 740px) {
+  width: 460px;
+  height: fit-content;
+}
+
+@media screen and (max-width: 480px) {
+  width: 90%;
+  height: fit-content;
+} */
+`;
+
 export const CarouselControls = styled.div`
   display: flex;
   justify-content: space-between;
