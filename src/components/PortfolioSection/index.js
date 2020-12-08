@@ -13,7 +13,9 @@ import {
   PortfolioH2,
   PortfolioDivider,
   PortfolioDividerInternal,
-  // PortfolioP,
+  PortfolioP,
+  MobileCard,
+  MobileIcon,
   ModalButtonsContainer,
   ViewSiteButtonsContainer,
   ViewSiteButtonWrapper,
@@ -22,11 +24,16 @@ import {
   ExitButton,
   // SelectedImageContainer,
   SelectedCard,
+  MobileSelectedCard,
   CarouselWrapper,
   CarouselWindow,
   // Widget,
   Carousel,
   CarouselControls,
+  MobileCarouselWrapper,
+  MobileCarouselWindow,
+  MobileCarousel,
+  MobileSelectedImage,
   SelectedImage,
   SelectedTextContent,
   SelectedH2,
@@ -38,7 +45,7 @@ import {
 } from "./PortfolioElements";
 import "./PortfolioSection.css";
 import Button from "../Button";
-import { projects } from "./ProjectData";
+import { projects, darkscreen, login } from "./ProjectData";
 import LaunchIcon from "@material-ui/icons/Launch";
 import CloseIcon from "@material-ui/icons/Close";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -133,20 +140,47 @@ const PortfolioSection = () => {
                 delay={delay}
                 key={index}
               >
-                <PortfolioCard
-                  layoutId={project.id}
-                  onClick={() => selectProject(project.id)}
-                >
-                  <PortfolioIcon src={project.images[0]} />
-                  <PortfolioH2>{project.name}</PortfolioH2>
-                  <Button
-                    title="Learn More"
-                    openModal={() => selectProject(project.id)}
-                    lightBg={true}
-                  />
-
-                  {/* <PortfolioP>{project.description}</PortfolioP> */}
-                </PortfolioCard>
+                {project.name !== "LNB" ? (
+                  <PortfolioCard
+                    layoutId={project.id}
+                    onClick={() => selectProject(project.id)}
+                  >
+                    <PortfolioIcon src={project.images[0]} />
+                    <PortfolioH2>{project.name}</PortfolioH2>
+                    <Button
+                      title="Learn More"
+                      openModal={() => selectProject(project.id)}
+                      lightBg={true}
+                    />
+                    {/* <PortfolioP>{project.description}</PortfolioP> */}
+                  </PortfolioCard>
+                ) : (
+                  <>
+                    <MobileCard
+                      layoutId={project.id}
+                      onClick={() => selectProject(project.id)}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "row",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <MobileIcon src={project.images[0]} />
+                        <MobileIcon src={login} />
+                        <MobileIcon src={project.images[1]} />
+                        <MobileIcon src={project.images[2]} />
+                      </div>
+                      <PortfolioH2>{project.name}</PortfolioH2>
+                      <Button
+                        title="Learn More"
+                        openModal={() => selectProject(project.id)}
+                        lightBg={true}
+                      />
+                    </MobileCard>
+                  </>
+                )}
               </ScrollAnimation>
             );
           })}
@@ -161,39 +195,40 @@ const PortfolioSection = () => {
                 exit={{ opacity: 0, transition: { duration: 0.15 } }}
                 transition={{ duration: 0.2, delay: 0.15 }}
               />
+              {selectedId !== 2 ? (
+                <SelectedCard layoutId={selectedId}>
+                  <CarouselWrapper>
+                    {/* <Widget src={projects[selectedId - 1].url} /> */}
+                    <CarouselWindow>
+                      <Carousel ref={carousel}>
+                        <SelectedImage
+                          src={images[imageIndex === 0 ? 2 : imageIndex - 1]}
+                        />
+                        <SelectedImage src={images[imageIndex]} />
+                        <SelectedImage
+                          src={images[imageIndex === 2 ? 0 : imageIndex + 1]}
+                        />
+                      </Carousel>
+                      <CarouselControls>
+                        <PrevButton onClick={() => slideControl(-1)}>
+                          <ArrowBackIosRounded />
+                        </PrevButton>
+                        <NextButton onClick={() => slideControl(1)}>
+                          <ArrowForwardIosRounded />
+                        </NextButton>
+                      </CarouselControls>
+                    </CarouselWindow>
+                  </CarouselWrapper>
 
-              <SelectedCard layoutId={selectedId}>
-                <CarouselWrapper>
-                  {/* <Widget src={projects[selectedId - 1].url} /> */}
-                  <CarouselWindow>
-                    <Carousel ref={carousel}>
-                      <SelectedImage
-                        src={images[imageIndex === 0 ? 2 : imageIndex - 1]}
-                      />
-                      <SelectedImage src={images[imageIndex]} />
-                      <SelectedImage
-                        src={images[imageIndex === 2 ? 0 : imageIndex + 1]}
-                      />
-                    </Carousel>
-                    <CarouselControls>
-                      <PrevButton onClick={() => slideControl(-1)}>
-                        <ArrowBackIosRounded />
-                      </PrevButton>
-                      <NextButton onClick={() => slideControl(1)}>
-                        <ArrowForwardIosRounded />
-                      </NextButton>
-                    </CarouselControls>
-                  </CarouselWindow>
-                </CarouselWrapper>
-
-                <SelectedTextContent>
-                  <SelectedH2>{projects[selectedId - 1].name}</SelectedH2>
-                  <SelectedH3>({projects[selectedId - 1].stack})</SelectedH3>
-                  <SelectedP>{projects[selectedId - 1].description}</SelectedP>
-                </SelectedTextContent>
-                <ModalButtonsContainer>
-                  <ViewSiteButtonsContainer>
-                    {projects[selectedId - 1].name !== "LNB" && (
+                  <SelectedTextContent>
+                    <SelectedH2>{projects[selectedId - 1].name}</SelectedH2>
+                    <SelectedH3>({projects[selectedId - 1].stack})</SelectedH3>
+                    <SelectedP>
+                      {projects[selectedId - 1].description}
+                    </SelectedP>
+                  </SelectedTextContent>
+                  <ModalButtonsContainer>
+                    <ViewSiteButtonsContainer>
                       <ViewSiteButtonWrapper
                         href={projects[selectedId - 1].url}
                         target="_blank"
@@ -203,22 +238,92 @@ const PortfolioSection = () => {
                           <LaunchIcon fontSize="small" />
                         </GoToSiteIcon>
                       </ViewSiteButtonWrapper>
-                    )}
-                    <ViewSiteButtonWrapper
-                      href={projects[selectedId - 1].github}
-                      target="_blank"
-                    >
-                      <ViewSiteButton>Source Code</ViewSiteButton>
-                      <GoToSiteIcon>
-                        <GitHubIcon fontSize="small" />
-                      </GoToSiteIcon>
-                    </ViewSiteButtonWrapper>
-                  </ViewSiteButtonsContainer>
-                  <ExitButton onClick={closeModal}>
-                    <CloseIcon fontSize="large" />
-                  </ExitButton>
-                </ModalButtonsContainer>
-              </SelectedCard>
+                      <ViewSiteButtonWrapper
+                        href={projects[selectedId - 1].github}
+                        target="_blank"
+                      >
+                        <ViewSiteButton>Source Code</ViewSiteButton>
+                        <GoToSiteIcon>
+                          <GitHubIcon fontSize="small" />
+                        </GoToSiteIcon>
+                      </ViewSiteButtonWrapper>
+                    </ViewSiteButtonsContainer>
+                    <ExitButton onClick={closeModal}>
+                      <CloseIcon fontSize="large" />
+                    </ExitButton>
+                  </ModalButtonsContainer>
+                </SelectedCard>
+              ) : (
+                <MobileSelectedCard layoutId={selectedId}>
+                  <MobileCarouselWrapper>
+                    {/* <Widget src={projects[selectedId - 1].url} /> */}
+                    <MobileCarouselWindow>
+                      <MobileCarousel ref={carousel}>
+                        <MobileSelectedImage
+                          src={images[imageIndex === 0 ? 2 : imageIndex - 1]}
+                        />
+                        <MobileSelectedImage src={images[imageIndex]} />
+                        <MobileSelectedImage
+                          src={images[imageIndex === 2 ? 0 : imageIndex + 1]}
+                        />
+                      </MobileCarousel>
+                      <CarouselControls>
+                        <PrevButton onClick={() => slideControl(-1)}>
+                          <ArrowBackIosRounded />
+                        </PrevButton>
+                        <NextButton onClick={() => slideControl(1)}>
+                          <ArrowForwardIosRounded />
+                        </NextButton>
+                      </CarouselControls>
+                    </MobileCarouselWindow>
+                  </MobileCarouselWrapper>
+
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignSelf: "flex-end",
+                    }}
+                  >
+                    <SelectedTextContent>
+                      <SelectedH2>{projects[selectedId - 1].name}</SelectedH2>
+                      <SelectedH3>
+                        ({projects[selectedId - 1].stack})
+                      </SelectedH3>
+                      <SelectedP>
+                        {projects[selectedId - 1].description}
+                      </SelectedP>
+                    </SelectedTextContent>
+                    <ModalButtonsContainer>
+                      <ViewSiteButtonsContainer>
+                        {selectedId !== 2 && (
+                          <ViewSiteButtonWrapper
+                            href={projects[selectedId - 1].url}
+                            target="_blank"
+                          >
+                            <ViewSiteButton>View Demo</ViewSiteButton>
+                            <GoToSiteIcon>
+                              <LaunchIcon fontSize="small" />
+                            </GoToSiteIcon>
+                          </ViewSiteButtonWrapper>
+                        )}
+                        <ViewSiteButtonWrapper
+                          href={projects[selectedId - 1].github}
+                          target="_blank"
+                        >
+                          <ViewSiteButton>Source Code</ViewSiteButton>
+                          <GoToSiteIcon>
+                            <GitHubIcon fontSize="small" />
+                          </GoToSiteIcon>
+                        </ViewSiteButtonWrapper>
+                      </ViewSiteButtonsContainer>
+                      <ExitButton onClick={closeModal}>
+                        <CloseIcon fontSize="large" />
+                      </ExitButton>
+                    </ModalButtonsContainer>
+                  </div>
+                </MobileSelectedCard>
+              )}
             </>
           )}
         </AnimatePresence>
