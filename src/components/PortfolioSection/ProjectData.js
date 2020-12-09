@@ -53,13 +53,14 @@ export const projects = [
   },
   {
     id: 3,
-    linkTo: "/landingpage",
-    name: "Business Landing Page Clone",
-    stack: "React / Firebase Hosting",
-    description: "Business landing page clone with responsive web design.",
-    images: [carousel, services, contact],
-    url: "https://officium-f28bd.web.app/",
-    github: "https://github.com/anwachuku15/officium",
+    linkTo: "/amazon-clone",
+    name: "Amazon Clone",
+    stack: "React / Node / Express / Firebase Cloud Functions & Hosting",
+    description:
+      "A full stack Amazon clone with full e-commerce functionality, Stripe payment processsing, and user authentication.",
+    images: [amazon, cart, checkout],
+    url: "https://clone-7b53f.web.app/",
+    github: "https://github.com/anwachuku15/amazon-clone",
   },
   {
     id: 4,
@@ -74,14 +75,13 @@ export const projects = [
   },
   {
     id: 5,
-    linkTo: "/amazon-clone",
-    name: "Amazon Clone",
-    stack: "React / Node / Express / Firebase Cloud Functions & Hosting",
-    description:
-      "A full stack Amazon clone with full e-commerce functionality, Stripe payment processsing, and user authentication.",
-    images: [amazon, cart, checkout],
-    url: "https://clone-7b53f.web.app/",
-    github: "https://github.com/anwachuku15/amazon-clone",
+    linkTo: "/landingpage",
+    name: "Business Landing Page",
+    stack: "React / Firebase Hosting",
+    description: "Business landing page clone with responsive web design.",
+    images: [carousel, services, contact],
+    url: "https://officium-f28bd.web.app/",
+    github: "https://github.com/anwachuku15/officium",
   },
   {
     id: 6,
