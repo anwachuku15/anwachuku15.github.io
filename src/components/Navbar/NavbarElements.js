@@ -90,11 +90,15 @@ export const NavLinks = styled(ScrollLink)`
   border-bottom-width: 3px;
   border-bottom-style: solid;
   border-bottom-color: transparent;
-  transition: border-bottom-color 0.2s ease-in-out;
+  transition: all 0.2s ease;
 
   &.active {
     border-bottom-color: red;
-    transition: border-bottom-color 0.2s ease-in-out;
+    transition: border-bottom-color 0.2s ease;
+  }
+
+  &:hover {
+    color: red;
   }
 `;
 
