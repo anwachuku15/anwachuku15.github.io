@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { Helmet } from "react-helmet";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import ResponsiveNavbar from "./components/ResponsiveNavbar";
@@ -11,6 +12,9 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Helmet>
+          <meta name="author" content="Andrew Nwachuku" />
+        </Helmet>
         <ResponsiveNavbar />
         <Switch>
           <Route exact path="/" component={Home} />
