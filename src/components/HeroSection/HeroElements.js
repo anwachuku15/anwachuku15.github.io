@@ -54,7 +54,7 @@ export const HeroContent = styled.div`
   padding: 8px 24px;
   display: flex;
   flex-direction: column;
-  align-items: "center";
+  align-items: center;
 `;
 
 export const HeroMainText = styled.div`
@@ -65,6 +65,7 @@ export const HeroH1 = styled.h1`
   color: white;
   font-size: 48px;
   text-align: center;
+  /* display: flex; */
 
   @media screen and (max-width: 768px) {
     font-size: 40px;
@@ -80,6 +81,10 @@ export const HeroH1 = styled.h1`
 
   @media screen and (max-width: 468px) {
     font-size: 24px;
+  }
+
+  @media screen and (max-width: 375px) {
+    font-size: 22px;
   }
 `;
 
