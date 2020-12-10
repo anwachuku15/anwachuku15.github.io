@@ -99,12 +99,13 @@
   border-radius: 100px;
   padding: 30px;
   width: max-content;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .skills__icon:hover {
   cursor: pointer;
   color: white;
+  background: #d23f3f;
 }
 
 .skills__iconTitle {
