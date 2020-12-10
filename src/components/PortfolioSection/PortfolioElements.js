@@ -47,23 +47,16 @@ export const PortfolioWrapper = styled(motion.div)`
 
 export const PortfolioCard = styled(motion.div)`
   background: white;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   border-radius: 10px;
-  /* max-height: 340px; */
   height: fit-content;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  /* transition: all 0.2s ease-in-out; */
-
-  /* &:hover {
-    transform: scale(1.01);
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-  } */
 `;
 
 export const SelectedCard = styled(motion.div)`
@@ -97,13 +90,16 @@ export const SelectedCard = styled(motion.div)`
 `;
 
 export const PortfolioIcon = styled(motion.img)`
-  /* width: 160px; */
-  /* height: 160px; */
-  /* margin-bottom: 10px; */
   width: 100%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  /* height: 195px; */
+  /* border-top-left-radius: 10px;
+  border-top-right-radius: 10px; */
+  border-radius: 10px;
+  opacity: 1;
+  transition: all 0.2s ease;
+
+  ${PortfolioCard}:hover & {
+    opacity: 0.1;
+  }
 `;
 
 export const CarouselWrapper = styled.div`
@@ -164,10 +160,11 @@ export const MobileCard = styled(motion.div)`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  position: relative;
   border-radius: 10px;
   /* max-height: 500px; */
   height: fit-content;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   /* transition: all 0.2s ease-in-out; */
@@ -186,6 +183,12 @@ export const MobileIcon = styled(motion.img)`
   object-fit: contain;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  opacity: 1;
+  transition: all 0.2s ease;
+
+  ${MobileCard}:hover & {
+    opacity: 0.1;
+  }
 `;
 
 export const MobileSelectedCard = styled(motion.div)`
@@ -358,9 +361,59 @@ export const PortfolioDividerInternal = styled(motion.div)`
 `;
 
 export const PortfolioH2 = styled(motion.h2)`
-  font-size: 1rem;
-  margin-bottom: 10px;
-  color: black !important;
+  font-size: 20px;
+  /* margin-bottom: 10px; */
+  color: black;
+`;
+
+export const ProjectInfo = styled.div`
+  text-align: center;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: all 0.2s ease;
+
+  ${PortfolioCard}:hover & {
+    opacity: 1;
+    top: 20px;
+  }
+`;
+
+export const MobileProjectInfo = styled.div`
+  text-align: center;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: all 0.2s ease;
+
+  ${MobileCard}:hover & {
+    opacity: 1;
+    top: 20px;
+  }
+`;
+
+export const PortfolioButton = styled.div`
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  transition: all 0.2s ease;
+
+  ${PortfolioCard}:hover & {
+    opacity: 1;
+    bottom: 30px;
+  }
+`;
+
+export const MobilePortfolioButton = styled.div`
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  transition: all 0.2s ease;
+
+  ${MobileCard}:hover & {
+    opacity: 1;
+    bottom: 30px;
+  }
 `;
 
 export const SelectedTextContent = styled(motion.div)`
@@ -394,7 +447,7 @@ export const SelectedH3 = styled(motion.h3)`
 export const PortfolioP = styled(motion.p)`
   font-size: 1rem;
   text-align: center;
-  color: black !important;
+  color: red;
 `;
 
 export const SelectedP = styled(motion.p)`
@@ -481,5 +534,4 @@ export const Overlay = styled(motion.div)`
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  /* max-width: 990px; */
 `;

@@ -10,12 +10,16 @@ import {
   PortfolioWrapper,
   PortfolioCard,
   PortfolioIcon,
+  ProjectInfo,
   PortfolioH2,
+  PortfolioButton,
   PortfolioDivider,
   PortfolioDividerInternal,
   PortfolioP,
   MobileCard,
   MobileIcon,
+  MobileProjectInfo,
+  MobilePortfolioButton,
   ModalButtonsContainer,
   ViewSiteButtonsContainer,
   ViewSiteButtonWrapper,
@@ -147,13 +151,17 @@ const PortfolioSection = () => {
                     onClick={() => selectProject(project.id)}
                   >
                     <PortfolioIcon src={project.images[0]} />
-                    <PortfolioH2>{project.name}</PortfolioH2>
-                    <Button
-                      title="Learn More"
-                      openModal={() => selectProject(project.id)}
-                      lightBg={true}
-                    />
-                    {/* <PortfolioP>{project.description}</PortfolioP> */}
+                    <ProjectInfo>
+                      <PortfolioH2>{project.name}</PortfolioH2>
+                      <PortfolioP>{project.stack}</PortfolioP>
+                    </ProjectInfo>
+                    <PortfolioButton>
+                      <Button
+                        title="Learn More"
+                        openModal={() => selectProject(project.id)}
+                        lightBg={true}
+                      />
+                    </PortfolioButton>
                   </PortfolioCard>
                 ) : (
                   <>
@@ -173,12 +181,17 @@ const PortfolioSection = () => {
                         <MobileIcon src={project.images[1]} />
                         <MobileIcon src={project.images[2]} />
                       </div>
-                      <PortfolioH2>{project.name}</PortfolioH2>
-                      <Button
-                        title="Learn More"
-                        openModal={() => selectProject(project.id)}
-                        lightBg={true}
-                      />
+                      <MobileProjectInfo>
+                        <PortfolioH2>{project.name}</PortfolioH2>
+                        <PortfolioP>{project.stack}</PortfolioP>
+                      </MobileProjectInfo>
+                      <MobilePortfolioButton>
+                        <Button
+                          title="Learn More"
+                          openModal={() => selectProject(project.id)}
+                          lightBg={true}
+                        />
+                      </MobilePortfolioButton>
                     </MobileCard>
                   </>
                 )}
