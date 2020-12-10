@@ -3,6 +3,7 @@
   /* background-color: #f7f7f7; */
   padding-top: 52px;
   padding-bottom: 46px;
+  z-index: 1;
 }
 
 @media (max-width: 980px) {
@@ -98,6 +99,12 @@
   border-radius: 100px;
   padding: 30px;
   width: max-content;
+  transition: color 0.2s ease;
+}
+
+.skills__icon:hover {
+  cursor: pointer;
+  color: white;
 }
 
 .skills__iconTitle {
@@ -112,4 +119,75 @@
 .skills__description {
   line-height: 2em;
   text-align: center;
+}
+
+.skills__overlay {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.skills__addOverlay {
+  z-index: 1 !important;
+  opacity: 1 !important;
+  display: flex !important;
+  transition: all 0.2s ease;
+}
+
+.skills__overlayContent {
+  z-index: 1;
+  color: red;
+}
+
+@keyframes showOverlay {
+  from {
+    z-index: 0;
+    opacity: 0;
+  }
+  to {
+    z-index: 1;
+    opacity: 1;
+  }
+}
+
+.showOverlay {
+  display: flex;
+  animation-name: showOverlay;
+  animation-delay: 100ms;
+  animation-duration: 200ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+@keyframes hideOverlay {
+  0% {
+    z-index: 1;
+    opacity: 1;
+  }
+  100% {
+    z-index: 0;
+    opacity: 0;
+  }
+}
+
+.hideOverlay {
+  /* display: none; */
+  animation-name: hideOverlay;
+  animation-delay: 100ms;
+  animation-duration: 200ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+.skills__selectedIcon {
+  position: relative;
 }
