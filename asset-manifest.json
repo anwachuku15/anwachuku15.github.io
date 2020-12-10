@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.5e86690f.chunk.css",
-    "main.js": "/static/js/main.507b7a0a.chunk.js",
-    "main.js.map": "/static/js/main.507b7a0a.chunk.js.map",
+    "main.js": "/static/js/main.46c3dd88.chunk.js",
+    "main.js.map": "/static/js/main.46c3dd88.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.cd133b2c.js",
     "runtime-main.js.map": "/static/js/runtime-main.cd133b2c.js.map",
-    "static/js/2.28fc6340.chunk.js": "/static/js/2.28fc6340.chunk.js",
-    "static/js/2.28fc6340.chunk.js.map": "/static/js/2.28fc6340.chunk.js.map",
+    "static/js/2.1d200754.chunk.js": "/static/js/2.1d200754.chunk.js",
+    "static/js/2.1d200754.chunk.js.map": "/static/js/2.1d200754.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.5eb17d867fac9b49f6720710a359ad38.js": "/precache-manifest.5eb17d867fac9b49f6720710a359ad38.js",
+    "precache-manifest.9850c5a33e4314262c77f68196f67f90.js": "/precache-manifest.9850c5a33e4314262c77f68196f67f90.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.5e86690f.chunk.css.map": "/static/css/main.5e86690f.chunk.css.map",
-    "static/js/2.28fc6340.chunk.js.LICENSE.txt": "/static/js/2.28fc6340.chunk.js.LICENSE.txt",
+    "static/js/2.1d200754.chunk.js.LICENSE.txt": "/static/js/2.1d200754.chunk.js.LICENSE.txt",
     "static/media/carousel.png": "/static/media/carousel.2d9fa6e9.png",
     "static/media/cart.png": "/static/media/cart.421a8de7.png",
     "static/media/checkout.png": "/static/media/checkout.6d4c413c.png",
@@ -26,7 +26,6 @@
     "static/media/lost.svg": "/static/media/lost.9ba408ab.svg",
     "static/media/mailbox.svg": "/static/media/mailbox.ac334d35.svg",
     "static/media/post.png": "/static/media/post.8979df91.png",
-    "static/media/preview.png": "/static/media/preview.e74ea3fa.png",
     "static/media/profile.png": "/static/media/profile.08f7bab5.png",
     "static/media/rapcaviar.png": "/static/media/rapcaviar.ac3eaaab.png",
     "static/media/rapcaviar2.png": "/static/media/rapcaviar2.7e0fda81.png",
@@ -39,8 +38,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.cd133b2c.js",
-    "static/js/2.28fc6340.chunk.js",
+    "static/js/2.1d200754.chunk.js",
     "static/css/main.5e86690f.chunk.css",
-    "static/js/main.507b7a0a.chunk.js"
+    "static/js/main.46c3dd88.chunk.js"
   ]
 }
