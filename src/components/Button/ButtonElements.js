@@ -17,7 +17,7 @@ export const BtnWrapper = styled.div`
     if (disabled) {
       return `${"2px solid lightgray"}`;
     } else if (lightBg && !contactLinkedIn && !contactGmail) {
-      return `${"2px solid #322f4e"}`;
+      return `${"2px solid rgba(210,63,63,1)"}`;
     } else if (contactLinkedIn) {
       return `${"2px solid #0A66C2"}`;
     } else if (contactGmail) {
@@ -103,7 +103,7 @@ export const Btn = styled.p`
   display: flex;
   color: ${({ lightBg, contactLinkedIn, contactGmail }) => {
     if (lightBg && !contactLinkedIn && !contactGmail) {
-      return "#322f4e";
+      return "rgba(210,63,63,1)";
     } else if (contactLinkedIn) {
       return "#0A66C2";
     } else if (contactGmail) {
