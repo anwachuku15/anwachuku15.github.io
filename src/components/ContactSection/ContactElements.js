@@ -16,7 +16,7 @@ export const ContactContainer = styled.div`
 `;
 
 export const ContactWrapper = styled.div`
-  display: grid;
+  /* display: grid; */
   z-index: 1;
   height: 860px;
   width: 100%;
@@ -25,36 +25,52 @@ export const ContactWrapper = styled.div`
   margin-left: auto;
   padding: 0 24px;
   justify-content: center;
+
+  @media screen and (min-width: 769px) {
+    display: grid;
+  }
 `;
 
 export const ContactRow = styled.div`
-  display: grid;
-  grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
-  grid-template-areas: ${({ imgStart }) =>
-    imgStart ? `'col2 col1'` : `'col1 col2'`};
 
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 769px) {
+    display: grid;
+    grid-auto-columns: minmax(auto, 1fr);
     grid-template-areas: ${({ imgStart }) =>
-      imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
+      imgStart ? `'col2 col1'` : `'col1 col2'`};
   }
 `;
 
 export const Column1 = styled(motion.div)`
   margin-bottom: 15px;
   padding: 0 15px;
-  grid-area: col1;
+
+  @media screen and (min-width: 769px) {
+    grid-area: col1;
+  }
 `;
 export const Column2 = styled(motion.div)`
   margin-bottom: 15px;
   padding: 0 15px;
   grid-area: col2;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const TextWrapper = styled.div`
   max-width: 540px;
   padding-top: 0;
   padding-bottom: 60px;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+  }
 `;
 
 export const TopLine = styled.p`
