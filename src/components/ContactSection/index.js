@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from "react";
+import ScrollAnimation from "react-animate-on-scroll";
 import Button from "../Button";
 import {
   ContactContainer,
@@ -89,8 +90,13 @@ const ContactSection = ({
           <ContactRow imgStart={imgStart}>
             <Column1>
               <TextWrapper>
-                <TopLine>Contact</TopLine>
-                {/* <ContactOption>You can reach me through LinkedIn</ContactOption> */}
+                <ScrollAnimation
+                  animateOnce
+                  animateIn="slideInRight"
+                  duration={1}
+                >
+                  <TopLine>Contact</TopLine>
+                </ScrollAnimation>
                 <div
                   style={{
                     display: "flex",
@@ -99,31 +105,45 @@ const ContactSection = ({
                     alignItems: "center",
                   }}
                 >
-                  <Button
-                    title="LinkedIn"
-                    contactLinkedIn={true}
-                    lightBg={true}
-                  />
+                  <ScrollAnimation
+                    animateOnce
+                    animateIn="slideInRight"
+                    duration={1}
+                    delay={200}
+                  >
+                    <Button
+                      title="LinkedIn"
+                      contactLinkedIn={true}
+                      lightBg={true}
+                    />
+                  </ScrollAnimation>
                   {/* <Button title="Gmail" contactGmail={true} lightBg={true} /> */}
                 </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  }}
+                <ScrollAnimation
+                  animateOnce
+                  animateIn="slideInLeft"
+                  duration={1}
                 >
-                  <ContactDivider />
-                  <span
-                    style={{ marginLeft: 5, marginRight: 5, color: "gray" }}
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                    }}
                   >
-                    OR
-                  </span>
-                  <ContactDivider />
-                </div>
-                <FormWrapper id="contact_form">
-                  {/* <ContactOption>Send me an email.</ContactOption> */}
-                  {/* <TextField
+                    <ContactDivider />
+                    <span
+                      style={{ marginLeft: 5, marginRight: 5, color: "gray" }}
+                    >
+                      OR
+                    </span>
+                    <ContactDivider />
+                  </div>
+                </ScrollAnimation>
+                <ScrollAnimation animateOnce animateIn="zoomIn" duration={1}>
+                  <FormWrapper id="contact_form">
+                    {/* <ContactOption>Send me an email.</ContactOption> */}
+                    {/* <TextField
                     variant="outlined"
                     label="Name"
                     type="text"
@@ -147,88 +167,89 @@ const ContactSection = ({
                     }}
                     error={!isNameValid}
                   /> */}
-                  <FormName
-                    placeholder="Name"
-                    type="text"
-                    name="name"
-                    value={name}
-                    onChange={(e) => {
-                      setName(e.target.value);
-                      if (nameTouched && name.trim() === "") {
-                        setIsNameValid(false);
-                      } else if (nameTouched && name.trim() !== "") {
-                        setIsNameValid(true);
-                      }
-                    }}
-                    onBlur={() => {
-                      setNameTouched(true);
-                      if (name.trim() !== "") {
-                        setIsNameValid(true);
-                      } else {
-                        setIsNameValid(false);
-                      }
-                    }}
-                    isValid={name.trim() !== ""}
-                    touched={nameTouched}
-                  />
-                  <FormEmail
-                    placeholder="Email"
-                    type="email"
-                    name="email"
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                      if (emailRegex.test(email.toLowerCase())) {
-                        setIsEmailValid(true);
-                      } else if (
-                        !emailRegex.test(email.toLowerCase()) &&
-                        emailTouched
-                      ) {
-                        setIsEmailValid(false);
-                      }
-                    }}
-                    onBlur={(e) => {
-                      setEmailTouched(true);
-                      if (emailRegex.test(email.toLowerCase())) {
-                        setIsEmailValid(true);
-                      } else {
-                        setIsEmailValid(false);
-                      }
-                    }}
-                    isValid={isEmailValid}
-                    touched={emailTouched}
-                    emailRegex={emailRegex.test(email)}
-                  />
-                  <FormMessage
-                    placeholder="Message"
-                    name="message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                  />
-                  <br />
-                  {/* <div
+                    <FormName
+                      placeholder="Name"
+                      type="text"
+                      name="name"
+                      value={name}
+                      onChange={(e) => {
+                        setName(e.target.value);
+                        if (nameTouched && name.trim() === "") {
+                          setIsNameValid(false);
+                        } else if (nameTouched && name.trim() !== "") {
+                          setIsNameValid(true);
+                        }
+                      }}
+                      onBlur={() => {
+                        setNameTouched(true);
+                        if (name.trim() !== "") {
+                          setIsNameValid(true);
+                        } else {
+                          setIsNameValid(false);
+                        }
+                      }}
+                      isValid={name.trim() !== ""}
+                      touched={nameTouched}
+                    />
+                    <FormEmail
+                      placeholder="Email"
+                      type="email"
+                      name="email"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        if (emailRegex.test(email.toLowerCase())) {
+                          setIsEmailValid(true);
+                        } else if (
+                          !emailRegex.test(email.toLowerCase()) &&
+                          emailTouched
+                        ) {
+                          setIsEmailValid(false);
+                        }
+                      }}
+                      onBlur={(e) => {
+                        setEmailTouched(true);
+                        if (emailRegex.test(email.toLowerCase())) {
+                          setIsEmailValid(true);
+                        } else {
+                          setIsEmailValid(false);
+                        }
+                      }}
+                      isValid={isEmailValid}
+                      touched={emailTouched}
+                      emailRegex={emailRegex.test(email)}
+                    />
+                    <FormMessage
+                      placeholder="Message"
+                      name="message"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                    />
+                    <br />
+                    {/* <div
                     class="g-recaptcha"
                     data-sitekey="6LfvDuAZAAAAAHofENLOimCHMHOefdZ-5p4UPBOq"
                   ></div> */}
-                  <ReCAPTCHA
-                    sitekey="6LfvDuAZAAAAAHofENLOimCHMHOefdZ-5p4UPBOq"
-                    onChange={onCaptcha}
-                  />
-                  <Button
-                    title={"Submit"}
-                    submit={submit}
-                    isDisabled={
-                      !captchaVal ||
-                      name.trim() === "" ||
-                      email.trim() === "" ||
-                      !emailRegex.test(email.toLowerCase()) ||
-                      message.trim() === ""
-                    }
-                    lightBg={lightBg}
-                    primary={primary}
-                    dark={dark}
-                  />
-                </FormWrapper>
+                    <ReCAPTCHA
+                      sitekey="6LfvDuAZAAAAAHofENLOimCHMHOefdZ-5p4UPBOq"
+                      onChange={onCaptcha}
+                    />
+                    <Button
+                      title={"Submit"}
+                      submit={submit}
+                      isDisabled={
+                        !captchaVal ||
+                        name.trim() === "" ||
+                        email.trim() === "" ||
+                        !emailRegex.test(email.toLowerCase()) ||
+                        message.trim() === ""
+                      }
+                      lightBg={lightBg}
+                      primary={primary}
+                      dark={dark}
+                    />
+                  </FormWrapper>
+                </ScrollAnimation>
               </TextWrapper>
             </Column1>
             <Column2>
