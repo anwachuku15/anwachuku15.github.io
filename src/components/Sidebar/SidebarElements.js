@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
 export const SidebarContainer = styled.aside`
@@ -51,6 +51,25 @@ export const SidebarLink = styled(ScrollLink)`
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  list-style: none;
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+    transition: 0.2s ease-in-out;
+  }
+`;
+
+export const SidebarHome = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
   font-size: 1.5rem;
   text-decoration: none;
   list-style: none;
