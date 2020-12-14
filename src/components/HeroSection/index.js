@@ -55,7 +55,7 @@ const HeroSection = () => {
         </ScrollAnimation>
         <ScrollAnimation
           animateIn="rotateIn"
-          delay={1800}
+          delay={1300}
           duration={1}
           animateOnce={true}
           style={{ alignSelf: "center" }}
