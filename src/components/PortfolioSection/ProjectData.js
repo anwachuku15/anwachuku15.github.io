@@ -42,7 +42,7 @@ export const projects = [
     id: 2,
     linkTo: "",
     name: "LNB",
-    stack: "React Native (Expo) / React Navigation / Firebase",
+    stack: "React Native (Expo) / Firebase",
     description:
       "A social networking app built with React Native (optimized for iOS). Utilized React Redux for state management. Implemented Firebase for full backend support, including for authentication, database management, and storage. Features real-time updates, instant messaging, and push notifications. ",
     description2:
