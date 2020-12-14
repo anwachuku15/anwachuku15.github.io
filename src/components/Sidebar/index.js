@@ -10,7 +10,6 @@ import {
   SideBtnWrap,
   SidebarBtnLink,
 } from "./SidebarElements";
-import { NavLogo } from "../Navbar/NavbarElements";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
 const Sidebar = ({ isOpen, toggleMenu, notFound }) => {
