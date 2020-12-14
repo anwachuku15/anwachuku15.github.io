@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { projects } from "../../components/PortfolioSection/ProjectData";
+import Colors from "../../constants/Colors";
 import { ProjectContainer, ProjectWrapper } from "./ProjectElements";
 
 const Project = () => {
@@ -44,7 +45,7 @@ const Project = () => {
           marginTop: 80,
         }}
       >
-        <h1 style={{ fontSize: 48, color: "#d23f3f" }}>404</h1>
+        <h1 style={{ fontSize: 48, color: Colors.primaryRed }}>404</h1>
         <p style={{ fontSize: 24, color: "#101522" }}>Page Not Found</p>
         <img
           src={require("../../assets/images/svgs/lost.svg")}
