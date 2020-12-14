@@ -16,9 +16,8 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
 
-const Navbar = ({ toggleMenu }) => {
+const Navbar = ({ toggleMenu, notFound }) => {
   const [scrollNav, setScrollNav] = useState(false);
-  // const [pathname, setPathname] = useState();
 
   const changeNav = () => {
     if (window.scrollY >= 80) {
@@ -28,11 +27,9 @@ const Navbar = ({ toggleMenu }) => {
     }
   };
 
-  let path = window.location.pathname;
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
-    // console.log(path);
-  }, [path]);
+  }, []);
 
   const toggleHome = () => {
     scroll.scrollToTop();
@@ -50,56 +47,58 @@ const Navbar = ({ toggleMenu }) => {
             <FaBars />
           </MobileIcon>
 
-          <NavMenu>
-            <NavItem>
-              <NavLinks
-                to="hero"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-              >
-                Home
-              </NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks
-                to="whatIdo"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-              >
-                What I Do
-              </NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks
-                to="portfolio"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-              >
-                Portfolio
-              </NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks
-                to="contact"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-              >
-                Contact
-              </NavLinks>
-            </NavItem>
-          </NavMenu>
+          {!notFound && (
+            <NavMenu>
+              <NavItem>
+                <NavLinks
+                  to="hero"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact="true"
+                  offset={-80}
+                >
+                  Home
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks
+                  to="whatIdo"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact="true"
+                  offset={-80}
+                >
+                  What I Do
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks
+                  to="portfolio"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact="true"
+                  offset={-80}
+                >
+                  Portfolio
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks
+                  to="contact"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact="true"
+                  offset={-80}
+                >
+                  Contact
+                </NavLinks>
+              </NavItem>
+            </NavMenu>
+          )}
 
           <NavBtn>
             <NavBtnLink href="https://github.com/anwachuku15" target="_blank">
