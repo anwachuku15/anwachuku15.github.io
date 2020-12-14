@@ -1,14 +1,10 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-
-const lightRed = "#ffefef";
-// const black = "#060101";
-// const navy = "#322f4e";
-// const lightBlack = "#181625";
+import Colors from "../../constants/Colors";
 
 export const ContactContainer = styled.div`
   color: ${({ lightBg }) => (lightBg ? "#000" : "#fff")};
-  background: ${({ lightBg }) => (lightBg ? "white" : "#322f4e")};
+  background: ${({ lightBg }) => (lightBg ? "white" : Colors.navy)};
 
   @media screen and (max-width: 768px) {
     padding: 100px 0;
@@ -74,7 +70,7 @@ export const TextWrapper = styled.div`
 `;
 
 export const TopLine = styled.p`
-  color: #d23f3f;
+  color: ${Colors.primaryRed};
   font-size: 24px;
   line-height: 24px;
   font-weight: 700;
@@ -100,7 +96,7 @@ export const ContactDivider = styled(motion.div)`
   /* height: 23px; */
   margin: 20px auto 20px auto;
   box-sizing: content-box;
-  border-color: #d23f3f transparent transparent transparent;
+  border-color: ${Colors.primaryRed} transparent transparent transparent;
   border-width: 1px 0 0 0;
   border-style: solid;
   content: "";
@@ -124,7 +120,7 @@ export const FormWrapper = styled(motion.form)`
 export const FormName = styled(motion.input)`
   margin-bottom: 10px;
   padding: 10px 15px;
-  background: #322f4e;
+  background: ${Colors.navy};
   border: ${({ isValid, touched }) => {
     if (!isValid && touched) {
       return `${"2px solid red"}`;
@@ -146,7 +142,7 @@ export const FormName = styled(motion.input)`
 export const FormEmail = styled(motion.input)`
   margin-bottom: 10px;
   padding: 10px 15px;
-  background: #322f4e;
+  background: ${Colors.navy};
   border: ${({ isValid, touched, emailRegex }) => {
     if (!emailRegex && touched) {
       return `${"2px solid red"}`;
@@ -168,7 +164,7 @@ export const FormEmail = styled(motion.input)`
 export const FormMessage = styled(motion.textarea)`
   margin-bottom: 10px;
   padding: 10px 16px;
-  background: #322f4e;
+  background: ${Colors.navy};
   border: 0;
   border-radius: 10px;
   outline: none;

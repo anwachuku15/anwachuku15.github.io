@@ -1,14 +1,10 @@
 import styled from "styled-components";
 import { Link as ScrollLink } from "react-scroll";
-
-const lightRed = "#ffefef";
-const black = "#060101";
-const navy = "#322f4e";
-const lightBlack = "#181625";
+import Colors from "../../constants/Colors";
 
 export const AboutContainer = styled.div`
   color: ${({ lightBg }) => (lightBg ? "#000" : "#fff")};
-  background: ${({ lightBg }) => (lightBg ? lightRed : black)};
+  background: ${({ lightBg }) => (lightBg ? Colors.lightRed : Colors.black)};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,7 +28,7 @@ export const AboutWrapper = styled.div`
 
 export const AboutH1 = styled.h1`
   font-size: 2.5rem;
-  color: #322f4e;
+  color: ${Colors.navy};
   margin-top: 60px;
   margin-bottom: 64px;
 
@@ -72,7 +68,7 @@ export const TextWrapper = styled.div`
 `;
 
 export const TopLine = styled.p`
-  color: #d23f3f;
+  color: ${Colors.primaryRed};
   font-size: 16px;
   line-height: 16px;
   font-weight: 700;
@@ -86,7 +82,7 @@ export const Heading = styled.h1`
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
-  color: ${({ lightText }) => (lightText ? "#fff" : navy)};
+  color: ${({ lightText }) => (lightText ? "#fff" : Colors.navy)};
   @media screen and (max-width: 480px) {
     font-size: 32px;
   }
@@ -97,7 +93,7 @@ export const Subtitle = styled.p`
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
-  color: ${({ lightTextDesc }) => (lightTextDesc ? "#fff" : lightBlack)};
+  color: ${({ lightTextDesc }) => (lightTextDesc ? "#fff" : Colors.lightBlack)};
 `;
 
 export const ContactLink = styled(ScrollLink)`
@@ -109,7 +105,7 @@ export const ContactLink = styled(ScrollLink)`
 
 export const ContactP = styled.p`
   display: contents;
-  color: #d23f3f;
+  color: ${Colors.primaryRed};
   transition: color 0.1s ease;
 
   ${ContactLink}:hover & {

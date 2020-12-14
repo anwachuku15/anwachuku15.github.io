@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
-
-// const navy = "#322f4e";
+import Colors from "../../constants/Colors";
 
 export const BtnWrapper = styled.div`
   display: flex;
@@ -37,11 +36,11 @@ export const BtnWrapper = styled.div`
       if (disabled) {
         return `${"lightgray"}`;
       } else if (contactLinkedIn) {
-        return `${"#0A66C2"}`;
+        return Colors.linkedIn;
       } else if (contactGmail) {
-        return `${"#34A853"}`;
+        return Colors.googleGreen;
       } else {
-        return `${"rgba(210,63,63,1)"}`;
+        return Colors.secondaryRed;
       }
     }};
     border: ${({ contactGmail }) =>
@@ -52,7 +51,7 @@ export const BtnWrapper = styled.div`
 
 export const ScrollBtn = styled(ScrollLink)`
   display: flex;
-  color: ${({ lightBg }) => (lightBg ? "#322f4e" : "white")};
+  color: ${({ lightBg }) => (lightBg ? Colors.navy : "white")};
   text-decoration: none;
   font-size: 18px;
   transition: color 150ms ease;
@@ -80,12 +79,12 @@ export const SubmitBtn = styled.button`
     if (disabled) {
       return "white";
     } else if (lightBg) {
-      return "#322f4e";
+      return Colors.navy;
     } else {
       return "white";
     }
   }};
-  /* color: ${({ lightBg }) => (lightBg ? "#322f4e" : "white")}; */
+  /* color: ${({ lightBg }) => (lightBg ? Colors.navy : "white")}; */
   text-decoration: none;
   font-size: 18px;
   transition: color 150ms ease;
@@ -103,11 +102,11 @@ export const Btn = styled.p`
   display: flex;
   color: ${({ lightBg, contactLinkedIn, contactGmail }) => {
     if (lightBg && !contactLinkedIn && !contactGmail) {
-      return "rgba(210,63,63,1)";
+      return Colors.secondaryRed;
     } else if (contactLinkedIn) {
-      return "#0A66C2";
+      return Colors.linkedIn;
     } else if (contactGmail) {
-      return "#EA4335";
+      return Colors.googleRed;
     } else {
       return "white";
     }
