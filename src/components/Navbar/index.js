@@ -44,7 +44,7 @@ const Navbar = ({ toggleMenu, notFound }) => {
             {/* <NavLogoIcon src={require("../../assets/images/A.png")} /> */}
           </NavLogo>
           <MobileIcon onClick={toggleMenu}>
-            <FaBars />
+            <FaBars color="#d82c2c" />
           </MobileIcon>
 
           {!notFound && (
