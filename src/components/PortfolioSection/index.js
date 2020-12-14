@@ -42,7 +42,8 @@ import {
   SelectedImage,
   SelectedTextContent,
   SelectedH2,
-  SelectedH3,
+  // SelectedH3,
+  SelectedDivider,
   SelectedP,
   Overlay,
   NextButton,
@@ -236,7 +237,8 @@ const PortfolioSection = () => {
 
                   <SelectedTextContent>
                     <SelectedH2>{projects[selectedId - 1].name}</SelectedH2>
-                    <SelectedH3>({projects[selectedId - 1].stack})</SelectedH3>
+                    {/* <SelectedH3>({projects[selectedId - 1].stack})</SelectedH3> */}
+                    <SelectedDivider />
                     <SelectedP>
                       {projects[selectedId - 1].description}
                     </SelectedP>
@@ -301,9 +303,7 @@ const PortfolioSection = () => {
                   >
                     <SelectedTextContent>
                       <SelectedH2>{projects[selectedId - 1].name}</SelectedH2>
-                      <SelectedH3>
-                        ({projects[selectedId - 1].stack})
-                      </SelectedH3>
+                      <SelectedDivider />
                       <SelectedP>
                         {projects[selectedId - 1].description}
                       </SelectedP>
