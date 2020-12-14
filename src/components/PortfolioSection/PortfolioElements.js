@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import testimonial from "../../assets/design/testimonialbackground.png";
+import Colors from "../../constants/Colors";
 
 export const PortfolioContainer = styled(motion.div)`
   /* max-height: 860px; */
@@ -12,7 +14,7 @@ export const PortfolioContainer = styled(motion.div)`
   padding-top: 64px;
   padding-bottom: 30px;
   align-items: center;
-  background: #2e1c1c;
+  background: ${Colors.maroondark};
 
   /* @media screen and (max-width: 1000px) {
     padding-top: 50px;
@@ -68,8 +70,8 @@ export const SelectedCard = styled(motion.div)`
   /* max-height: 75%; */
   /* height: 560px; */
   /* width: 40%; */
-  width: 700px;
-  top: 100px;
+  width: 720px;
+  top: 90px;
   z-index: 1;
   justify-content: flex-start;
   align-items: center;
@@ -192,7 +194,12 @@ export const MobileIcon = styled(motion.img)`
 `;
 
 export const MobileSelectedCard = styled(motion.div)`
-  background: white;
+  /* background: ; */
+  background-color: white;
+  background-image: url(${testimonial});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: row;
   position: fixed;
@@ -347,7 +354,7 @@ export const PortfolioDivider = styled(motion.div)`
   height: 23px;
   margin: 0 auto 64px auto;
   box-sizing: content-box;
-  border-color: #d23f3f transparent transparent transparent;
+  border-color: ${Colors.primaryRed} transparent transparent transparent;
   border-top-width: 3px;
   border-style: solid;
   content: "";
@@ -377,18 +384,11 @@ export const ProjectInfo = styled.div`
     opacity: 1;
     top: 20px;
   }
-`;
 
-export const MobileProjectInfo = styled.div`
-  text-align: center;
-  position: absolute;
-  top: 0;
-  opacity: 0;
-  transition: all 0.2s ease;
-
-  ${MobileCard}:hover & {
-    opacity: 1;
-    top: 20px;
+  @media screen and (max-width: 1118px) {
+    ${PortfolioCard}:hover & {
+      top: 10px;
+    }
   }
 `;
 
@@ -402,6 +402,31 @@ export const PortfolioButton = styled.div`
     opacity: 1;
     bottom: 30px;
   }
+
+  @media screen and (max-width: 1118px) {
+    ${PortfolioCard}:hover & {
+      bottom: 10px;
+    }
+  }
+`;
+
+export const MobileProjectInfo = styled.div`
+  text-align: center;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: all 0.2s ease;
+
+  ${MobileCard}:hover & {
+    opacity: 1;
+    top: 20px;
+  }
+
+  @media screen and (max-width: 1118px) {
+    ${MobileCard}:hover & {
+      top: 10px;
+    }
+  }
 `;
 
 export const MobilePortfolioButton = styled.div`
@@ -414,6 +439,12 @@ export const MobilePortfolioButton = styled.div`
     opacity: 1;
     bottom: 30px;
   }
+
+  @media screen and (max-width: 1118px) {
+    ${MobileCard}:hover & {
+      bottom: 10px;
+    }
+  }
 `;
 
 export const SelectedTextContent = styled(motion.div)`
@@ -422,6 +453,7 @@ export const SelectedTextContent = styled(motion.div)`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  margin-top: 9px;
   padding: 0 30px 0 30px;
   overflow: scroll;
 `;
@@ -429,7 +461,7 @@ export const SelectedTextContent = styled(motion.div)`
 export const SelectedH2 = styled(motion.h2)`
   text-align: left;
   width: 100%;
-
+  color: #444444;
   @media screen and (max-width: 480px) {
     font-size: 18px;
   }
@@ -442,6 +474,16 @@ export const SelectedH3 = styled(motion.h3)`
   @media screen and (max-width: 480px) {
     font-size: 16px;
   }
+`;
+
+export const SelectedDivider = styled.div`
+  margin: 10px auto 10px auto;
+  box-sizing: content-box;
+  border-color: ${Colors.primaryRed} transparent transparent transparent;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  content: "";
+  width: 100%;
 `;
 
 export const PortfolioP = styled(motion.p)`
@@ -519,7 +561,7 @@ export const ExitButton = styled(motion.div)`
 
   &:hover {
     transform: scale(1.25);
-    color: #322f4e;
+    color: ${Colors.navy};
     transition: all 0.2s ease-in-out;
   }
 `;
