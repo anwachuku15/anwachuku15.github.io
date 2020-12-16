@@ -46,7 +46,7 @@ export const projects = [
     description:
       "A social networking app built with React Native (optimized for iOS). Utilized React Redux for state management. Implemented Firebase for full backend support, including for authentication, database management, and storage. Features real-time updates, instant messaging, and push notifications. ",
     description2:
-      "This is app is currently in beta testing via Apple Test Flight.",
+      "This app is currently in beta testing via Apple Test Flight.",
     images: [lightmode, eventmediapost, userprofile],
     url: "",
     github: "https://github.com/anwachuku15/LNB",
@@ -57,7 +57,7 @@ export const projects = [
     name: "Amazon Clone",
     stack: "React / Node / Express / Firebase",
     description:
-      "A full stack Amazon clone with full e-commerce functionality including Stripe payment processsing. Used Context API for state management. Implemented Firebase for user authentication, database management, hosting, and further backend logic with Node (Firebase Cloud Functions).",
+      "A full stack Amazon clone with full e-commerce functionality including Stripe payment processing. Used Context API for state management. Implemented Firebase for user authentication, database management, hosting, and further backend logic with Node (Firebase Cloud Functions).",
     images: [amazon, cart, checkout],
     url: "https://clone-7b53f.web.app/",
     github: "https://github.com/anwachuku15/amazon-clone",
