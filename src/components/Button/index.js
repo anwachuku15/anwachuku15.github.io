@@ -5,6 +5,7 @@ import {
   RouteBtn,
   SubmitBtn,
   Btn,
+  ResumeBtn,
   Arrow,
   GmailArrow,
 } from "./ButtonElements";
@@ -17,6 +18,7 @@ import {
 } from "@material-ui/icons";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GmailIcon from "./GmailIcon";
+import GoogleDrive from "./GoogleDriveIcon";
 
 const Button = ({
   title,
@@ -32,10 +34,12 @@ const Button = ({
   primary,
   dark,
   dark2,
+  resume,
 }) => {
   return (
     <BtnWrapper
       lightBg={lightBg}
+      resume={resume}
       disabled={isDisabled}
       contactLinkedIn={contactLinkedIn}
       contactGmail={contactGmail}
@@ -46,6 +50,11 @@ const Button = ({
           window.open("https://www.linkedin.com/in/anwachuku15/", "_blank");
         } else if (contactGmail) {
           window.open("https://www.google.com/", "_blank");
+        } else if (resume) {
+          window.open(
+            "https://drive.google.com/file/d/1hscrU-GcjnmHd83sh72dXREU_iTJ00kM/view?usp=sharing",
+            "_blank"
+          );
         }
       }}
     >
@@ -96,6 +105,31 @@ const Button = ({
           </Arrow>
         </>
       )}
+      {resume && (
+        <>
+          <ResumeBtn
+            onClick={() =>
+              window.open(
+                "https://drive.google.com/file/d/1hscrU-GcjnmHd83sh72dXREU_iTJ00kM/view?usp=sharing",
+                "_blank"
+              )
+            }
+            lightBg={lightBg}
+            resume={resume}
+          >
+            {title}
+          </ResumeBtn>
+          <Arrow>
+            <GoogleDrive
+              style={{
+                width: 20,
+                height: 20,
+                borderRadius: 2,
+              }}
+            />
+          </Arrow>
+        </>
+      )}
       {contactLinkedIn && (
         <>
           <Btn
@@ -134,6 +168,7 @@ const Button = ({
           </GmailArrow>
         </>
       )}
+
       {submit && (
         <SubmitBtn lightBg={lightBg} onClick={submit} disabled={isDisabled}>
           {title}
