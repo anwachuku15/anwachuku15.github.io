@@ -10,8 +10,9 @@ export const BtnWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 20px;
-  padding: 6px 15px 8px 15px;
-  border-radius: 50px;
+  padding: ${({ resume }) =>
+    !resume ? `${"6px 15px 8px 15px"}` : `${"2px 15px 4px 15px"}`};
+  border-radius: ${({ resume }) => (!resume ? `${"50px"}` : `${"10px"}`)};
   border: ${({ lightBg, disabled, contactLinkedIn, contactGmail }) => {
     if (disabled) {
       return `${"2px solid lightgray"}`;
@@ -32,9 +33,16 @@ export const BtnWrapper = styled.div`
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
 
   &:hover {
-    background-color: ${({ disabled, contactLinkedIn, contactGmail }) => {
+    background-color: ${({
+      disabled,
+      resume,
+      contactLinkedIn,
+      contactGmail,
+    }) => {
       if (disabled) {
         return `${"lightgray"}`;
+      } else if (resume) {
+        return "white";
       } else if (contactLinkedIn) {
         return Colors.linkedIn;
       } else if (contactGmail) {
@@ -116,7 +124,19 @@ export const Btn = styled.p`
   transition: color 150ms ease;
 
   ${BtnWrapper}:hover & {
-    color: white;
+    color: ${({ resume }) => (!resume ? "white" : Colors.primaryRed)};
+  }
+`;
+
+export const ResumeBtn = styled.p`
+  display: flex;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 150ms ease;
+
+  ${BtnWrapper}:hover & {
+    color: ${Colors.primaryRed};
   }
 `;
 
@@ -125,11 +145,13 @@ export const Arrow = styled.div`
   bottom: -3px;
   margin-left: -20px;
   color: transparent;
+  opacity: 0;
   transition: all 200ms;
 
   ${BtnWrapper}:hover & {
     margin-left: 10px !important;
     color: white;
+    opacity: 1;
   }
 `;
 
