@@ -54,6 +54,15 @@ const HeroSection = () => {
           <HeroH1>I'm a full-stack web developer.</HeroH1>
         </ScrollAnimation>
         <ScrollAnimation
+          delay={1100}
+          animateIn="zoomIn"
+          duration={0.5}
+          animateOnce
+          style={{ alignSelf: "center" }}
+        >
+          <Button title="Resume" lightBg={false} resume />
+        </ScrollAnimation>
+        <ScrollAnimation
           animateIn="rotateIn"
           delay={1300}
           duration={1}
