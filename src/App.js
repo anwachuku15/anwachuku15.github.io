@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-// import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet";
 import {
-  // BrowserRouter as Router,
+  BrowserRouter as Router,
   Switch,
   Route,
   useLocation,
@@ -25,7 +25,6 @@ function App() {
   }, [location.pathname]);
 
   return (
-    // <Router>
     <div className="App">
       <ResponsiveNavbar notFound={isNotFound} />
       <Switch>
@@ -34,7 +33,6 @@ function App() {
       </Switch>
       <Footer />
     </div>
-    // </Router>
   );
 }
 
